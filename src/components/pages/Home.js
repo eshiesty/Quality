@@ -37,19 +37,19 @@ const Home = () => {
   //   baseURL: "https://data.mongodb-api.com/app/data-dfkrt/endpoint/data/v1",
   // });
   // const url = "https://data.mongodb-api.com/app/data-dfkrt/endpoint/data/v1";
-  const url =
-    "mongodb+srv://ecodowd:<CA7nSJnX0XYCZKiR>@mynttestservers.ue1r3.mongodb.net/?retryWrites=true&w=majority";
-  useEffect(() => {
-    axios
-      .get(url)
-      .then((response) => {
-        setRes(response.data);
-        console.log(res);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }, []);
+  // const url =
+  //   "mongodb+srv://ecodowd:<CA7nSJnX0XYCZKiR>@mynttestservers.ue1r3.mongodb.net/?retryWrites=true&w=majority";
+  // useEffect(() => {
+  //   axios
+  //     .get(url)
+  //     .then((response) => {
+  //       setRes(response.data);
+  //       console.log(res);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // }, []);
 
   return (
     <div>
