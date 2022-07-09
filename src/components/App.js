@@ -1,7 +1,4 @@
 import React from "react";
-import Header from "./Header";
-
-import ModeButton from "./ModeButton";
 import Background from "./background";
 import Daily from "./pages/Daily";
 import Home from "./pages/Home";

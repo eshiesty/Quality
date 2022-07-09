@@ -1,13 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
+
 import thunkMiddleware from "redux-thunk";
-import reduxThunk from "redux-thunk";
-import redux from "react-redux";
+
 import App from "./components/App";
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import rootReducer from "./reducers";
-import visualReducer from "./reducers/visualReducer";
+
 import * as ReactDOMClient from "react-dom/client";
 
 const store = configureStore({
