@@ -90,7 +90,7 @@
 
 /* CSS */
 .button-log {
-  background-color: #5da378ff;
+  background-color: rgb(37, 118, 65);
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
@@ -123,16 +123,16 @@
 }
 
 .button-sign {
-  background-color: #a61f1fff;
+  background-color: #5da378ff;
   height: 80px;
   font-size: 24px;
 }
 .button-sign:hover,
 .button-sign:focus {
-  background-color: #851919;
+  background-color: #5da378aa;
 }
 
-.button-1-selected {
+.button-1:selected {
   background-color: #5fb37faa;
 }
 
@@ -179,7 +179,7 @@
   border: 2px solid rgb(217, 216, 216);
 }
 .input:focus {
-  border: 3px solid #555;
+  border: 2px solid #555;
 }
 .parent {
   margin: 0;
@@ -227,4 +227,49 @@
 
 .top-margin {
   margin-top: 5%;
+}
+
+/* .input-box {
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  background: #fff;
+  border: 1px solid #a0a0a0;
+  border-radius: 4px;
+  padding-left: 0.5rem;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.input-box .prefix {
+  font-weight: 300;
+  font-size: 14px;
+  color: #999;
+} */
+.prefix {
+  position: relative;
+  color: #7b7b93;
+  padding: 15px 0 15px 15px;
+}
+.input-wrapper {
+  width: 20vmin;
+  height: 4vmin;
+  border: none;
+  border-radius: 1rem;
+  outline: none;
+  font-size: 1.5vmin;
+  font-weight: bold;
+  font-family: "Patua One", cursive;
+  /* padding: 0 4vmin; */
+  box-shadow: var(--inner-shadow);
+  background: whitesmoke;
+  color: var(--primary);
+  caret-color: var(--primary);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border: 2px solid rgb(217, 216, 216);
+  display: flex;
+  background-color: #ffffff;
+
+  margin: 10px 0;
 }
