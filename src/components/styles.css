@@ -171,6 +171,7 @@
   font-family: "Patua One", cursive;
   padding: 0 4vmin;
   box-shadow: var(--inner-shadow);
+
   background: whitesmoke;
   color: var(--primary);
   caret-color: var(--primary);
@@ -220,9 +221,16 @@
   visibility: hidden;
 }
 
-.eyelogo {
-  width: 3.5vmin;
-  height: 1.5vmin;
+.eye-logo-open {
+  width: 3.17vmin;
+  height: 2vmin;
+}
+.eye-logo-closed {
+  width: 3.17vmin;
+  height: 1vmin;
+
+  /* width: 2.96vmin;
+  height: 1vmin; */
 }
 
 .top-margin {

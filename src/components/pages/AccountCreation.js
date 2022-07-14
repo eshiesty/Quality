@@ -38,11 +38,13 @@ const AccountCreation = () => {
               />
 
               <img
-                className="eyelogo"
+                className={`${
+                  passwordShown ? "eye-logo-open" : "eye-logo-closed"
+                }`}
                 src={passwordShown ? eyeicon : eyestrike}
                 alt="eye"
                 onClick={togglePasswordVis}
-              ></img>
+              />
             </div>
           </div>
           <div className="right">
@@ -53,7 +55,7 @@ const AccountCreation = () => {
                   className="input"
                   type="text"
                   name="name"
-                  placeholder="@mynt"
+                  placeholder="username"
                 />
               </div>
               <div className="vertical-spacing">
@@ -61,7 +63,7 @@ const AccountCreation = () => {
                   className="input"
                   type="text"
                   name="name"
-                  placeholder="Ellis Mynt"
+                  placeholder="display name"
                 />
               </div>
               <div className="vertical-spacing">

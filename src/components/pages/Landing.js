@@ -41,7 +41,9 @@ const Landing = () => {
                 />
 
                 <img
-                  className="eyelogo"
+                  className={`${
+                    passwordShown ? "eye-logo-open" : "eye-logo-closed"
+                  }`}
                   src={passwordShown ? eyeicon : eyestrike}
                   alt="eye"
                   onClick={togglePasswordVis}
