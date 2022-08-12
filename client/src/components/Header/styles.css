@@ -1,0 +1,82 @@
+.centered-div {
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.LogoText {
+  color: #9adbb3;
+  font-size: 5vw;
+}
+
+.font-patua {
+  font-family: "Patua One", cursive;
+}
+
+.inline {
+  display: inline-block;
+}
+.z-0 {
+  z-index: 0;
+}
+
+.button-1 {
+  background-color: #9adbb3ff;
+  border-radius: 8 px;
+  border-style: none;
+  box-sizing: border-box;
+  /* color: #ffffff; */
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Patua One", cursive;
+
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 2%;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-1:hover {
+  background-color: #9adbb3aa;
+  cursor: pointer;
+}
+
+.post-light {
+  background-color: #fffde7;
+}
+.post-dark {
+  background-color: #282828;
+}
+
+.DarkModeBack {
+  background-color: #282828;
+}
+.DarkModeFont {
+  color: #fffde7;
+}
+.LightModeBack {
+  background-color: #fffde7;
+}
+.LightModeFont {
+  color: #282828;
+}
+.minterval-logo {
+  width: 15vw;
+  height: 15vw;
+  position: fixed;
+  top: -3vh;
+}
