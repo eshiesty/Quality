@@ -1,0 +1,95 @@
+.profile-container {
+  margin: auto;
+  width: 100%;
+  padding: 2% 0;
+  background-color: #9adbb3;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: absolute;
+  overflow: hidden;
+  min-height: 60%;
+  max-width: 100%;
+}
+.mobile-profile-container {
+  margin: auto;
+  width: 100%;
+  padding: 2% 0;
+  background-color: #9adbb3;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: absolute;
+  overflow: hidden;
+  min-height: 60%;
+  max-width: 100%;
+}
+
+.profile-photo-placement {
+  position: absolute;
+  left: 2%;
+}
+
+.name {
+  font-family: "Patua One", cursive;
+  font-size: 3vw;
+}
+.mobile-name {
+  font-family: "Patua One", cursive;
+  font-size: 7vw;
+}
+.name-placement {
+  top: 2vw;
+  left: 10vw;
+  position: relative;
+}
+.mobile-name-placement {
+  top: 2vw;
+  left: 20vw;
+  position: relative;
+}
+.handle {
+  font-family: "Patua One", cursive;
+  font-size: 2vw;
+  top: 2vw;
+  left: 10vw;
+  position: relative;
+}
+.mobile-handle {
+  font-family: "Patua One", cursive;
+  font-size: 4vw;
+  top: 2vw;
+  left: 20vw;
+  position: relative;
+}
+.inline {
+  display: inline-block;
+}
+.follow {
+  font-family: "Patua One", cursive;
+  font-size: 1.5vw;
+  text-align: center;
+  top: -4vw;
+}
+.ers {
+  position: relative;
+
+  left: 35vw;
+}
+.ing {
+  position: relative;
+  left: 42vw;
+}
+.mobile-follow {
+  font-family: "Patua One", cursive;
+  font-size: 3vw;
+  text-align: center;
+  top: -7vw;
+}
+.mobile-ers {
+  position: relative;
+
+  left: 62vw;
+}
+.mobile-ing {
+  position: relative;
+  left: 65vw;
+}

@@ -1,0 +1,107 @@
+.drop-down-holder {
+  width: 10%;
+
+  position: absolute;
+  cursor: pointer;
+  display: inline-block;
+  margin: 2%;
+  z-index: 1;
+  right: 1%;
+  min-width: 80px;
+}
+
+.drop-down-cover {
+  width: 100%;
+
+  background-color: #9adbb3ff;
+  border-radius: 8 px;
+  border-style: none;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  font-family: "Patua One", cursive;
+
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.drop-down-cover:hover {
+  background-color: #9adbb3aa;
+  cursor: pointer;
+}
+.drop-down-option {
+  width: 100%;
+  background-color: #9adbb3ff;
+  border-radius: 8 px;
+  border-style: none;
+
+  box-sizing: border-box;
+  /* color: #ffffff; */
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Patua One", cursive;
+
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.drop-down-option:hover {
+  background-color: #9adbb3aa;
+  cursor: pointer;
+}
+
+.horizontal-line {
+  border: 0;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+  background: #282828;
+}
+
+.light-component {
+  color: #fffde7;
+}
+.dark-component {
+  color: #282828;
+}
+
+.dark-background {
+  background: #282828;
+}
+.light-background {
+  background: #fffde7;
+}
+.divider-line {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  height: 1px;
+}

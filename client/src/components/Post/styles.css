@@ -1,0 +1,153 @@
+.post-light {
+  background-color: #fffde7;
+}
+.post-dark {
+  background-color: #282828;
+}
+.post-margin {
+  margin-top: 2px;
+}
+.light-font {
+  color: #fffde7;
+}
+
+.dark-font {
+  color: #282828;
+}
+.this-post {
+  min-width: 100%;
+  width: 100%;
+  min-height: 10vw;
+  padding: 2% 0;
+  background-color: #9adbb3;
+  /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
+  position: relative;
+  max-width: 100%;
+}
+
+.post-pfp {
+  height: 4vw;
+  width: 4vw;
+  background-color: #212121;
+  border-radius: 50%;
+  /* display: inline-block; */
+  top: 1vh;
+  left: 3vh;
+
+  position: relative;
+}
+.post-display-name {
+  font-family: "Patua One", cursive;
+  font-size: 2vw;
+  position: relative;
+  /* display: inline; */
+  left: 7vw;
+  top: -3.5vw;
+}
+.post-handle {
+  font-family: "Patua One", cursive;
+  font-size: 1.5vw;
+  position: relative;
+  top: -3.7vw;
+  left: 7vw;
+  /* display: inline; */
+}
+.post-content {
+  font-family: "Lato", sans-serif;
+  font-size: 2vw;
+  position: relative;
+  left: 3vw;
+  word-wrap: normal;
+  top: -3vw;
+  width: 53vw;
+}
+.post-timestamp {
+  font-family: "Lato", sans-serif;
+  font-size: 2vw;
+  position: relative;
+  right: -35vw;
+}
+.post-dark-component {
+  background-color: #282828;
+}
+.post-dark-text {
+  color: black;
+}
+.post-light-component {
+  background-color: #fffde7;
+}
+.post-light-text {
+  color: white;
+}
+.post-heart-icon {
+  width: 2.5vw;
+  height: 2.5vw;
+  left: 1.8vw;
+  top: 11vw;
+  position: absolute;
+}
+.post-like-amount {
+  left: 2.5vw;
+  top: 13vw;
+  font-size: 2vw;
+  position: absolute;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
+
+.post-comment-icon {
+}
+.mobile-post-pfp {
+  height: 4vw;
+  width: 4vw;
+  background-color: #212121;
+  border-radius: 50%;
+  /* display: inline-block; */
+  top: 1vh;
+  left: 3vh;
+
+  position: relative;
+}
+.mobile-post-display-name {
+  font-family: "Patua One", cursive;
+  font-size: 2vw;
+  position: relative;
+  /* display: inline; */
+  left: 7vw;
+  top: -3.5vw;
+}
+.mobile-post-handle {
+  font-family: "Patua One", cursive;
+  font-size: 1.5vw;
+  position: relative;
+  top: -3.7vw;
+  left: 7vw;
+  /* display: inline; */
+}
+.mobile-post-content {
+  font-family: "Lato", sans-serif;
+  font-size: 2vw;
+  position: relative;
+  left: 3vw;
+  word-wrap: normal;
+  top: -3vw;
+  width: 53vw;
+}
+.mobile-post-timestamp {
+  font-family: "Lato", sans-serif;
+  font-size: 2vw;
+  position: relative;
+  right: -50vw;
+}
+.mobile-post-dark-component {
+  background-color: #282828;
+}
+.mobile-post-dark-text {
+  color: black;
+}
+.mobile-post-light-component {
+  background-color: #fffde7;
+}
+.mobile-post-light-text {
+  color: white;
+}
