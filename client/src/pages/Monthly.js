@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../components/Header/Header";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styles from "./styles.css";
 import { useParams } from "react-router-dom";

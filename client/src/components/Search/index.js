@@ -10,28 +10,28 @@ const Search = () => {
     const username = event.target.searchInput.value;
     // const body = { username: username };
 
-    axios
-      .post("/api/auth/retrieve/username", { username })
-      // .get("/api/auth/retrieve/username", {
-      //   body: {
-      //     username: `${username}`,
-      //   },
-      // })
+    // axios
+    //   .post("/api/auth/retrieve/username", { username })
+    //   // .get("/api/auth/retrieve/username", {
+    //   //   body: {
+    //   //     username: `${username}`,
+    //   //   },
+    //   // })
 
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    // navigate(`/profile/${username}`);
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+    navigate(`/profile/${username}`);
   };
 
   return (
     <div className="inline">
       <form onSubmit={handleSubmit}>
         <input
-          className="input"
+          className="bar"
           type="text"
           name="searchInput"
           placeholder="search🔍"

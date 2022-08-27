@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "../components/Header/Header";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 import darkmonthly from "../icons/darkmonthly.png";
@@ -16,6 +16,7 @@ const Create = () => {
   const navigate = useNavigate();
   const [displayImage, setDisplayImage] = useState(cameraiconellis);
   const [isSelected, setSelected] = useState("");
+  const [errs, setErrs] = useState("");
   const onImageChange = (event) => {
     if (event.target.files && event.target.files[0]) {
       const image = URL.createObjectURL(event.target.files[0]);
@@ -33,6 +34,7 @@ const Create = () => {
     event.preventDefault();
     const content = event.target.content.value;
     const interval = isSelected;
+
     let data = { content, interval };
     axios
       .post("/api/posts/create", data)
@@ -40,7 +42,13 @@ const Create = () => {
         navigate("/profile/ellis");
       })
       .catch((err) => {
-        console.log(err);
+        if (err?.response?.data) {
+          setErrs([
+            err.response.data.content,
+            "\n",
+            err.response.data.interval,
+          ]);
+        }
       });
   };
   return (
@@ -97,6 +105,9 @@ const Create = () => {
               Mynt it!
               <input type="submit" className="file-upload" />
             </button>
+            <div>
+              <label className="error-text">{errs ? errs : ""}</label>
+            </div>
           </div>
         </form>
         <Footer />

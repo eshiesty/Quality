@@ -9,3 +9,4 @@ export const editPost = createAction("EDIT_POST");
 export const logIn = createAction("LOG_IN");
 export const logOut = createAction("LOG_OUT");
 export const signUp = createAction("SIGN_UP");
+export const rerender = createAction("RERENDER");

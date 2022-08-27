@@ -15,6 +15,18 @@ const PostSchema = new Schema(
       type: String,
       required: true,
     },
+    likes: {
+      type: Number,
+    },
+    likeList: {
+      type: Array,
+    },
+    comments: {
+      type: Number,
+    },
+    commentList: {
+      type: Array,
+    },
   },
   {
     timestamps: true,

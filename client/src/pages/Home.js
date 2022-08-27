@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../components/Header/Header";
+import Header from "../components/Header";
 import { useSelector } from "react-redux";
 import Footer from "../components/Footer";
 import styles from "./styles.css";

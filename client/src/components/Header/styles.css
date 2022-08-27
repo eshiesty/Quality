@@ -1,14 +1,14 @@
-.centered-div {
+/* .centered-div {
   position: sticky;
   left: 0;
   top: 0;
   width: 100%;
   text-align: center;
-}
+} */
 
 .LogoText {
   color: #9adbb3;
-  font-size: 5vw;
+  font-size: 3vw;
 }
 
 .font-patua {
@@ -20,6 +20,16 @@
 }
 .z-0 {
   z-index: 0;
+}
+.top-bar {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 8vw;
+  background-color: #282828;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
 }
 
 .button-1 {
@@ -75,9 +85,9 @@
   color: #282828;
 }
 .minterval-logo {
-  width: 15vw;
-  height: 15vw;
-  position: fixed;
-
-  top: -2.5vw;
+  width: 6vw;
+  height: 6vw;
+  /* position: fixed; */
+  position: relative;
+  top: 1.5vw;
 }

@@ -1,5 +1,5 @@
 .drop-down-holder {
-  width: 10%;
+  width: 1vw;
 
   position: absolute;
   cursor: pointer;
@@ -7,7 +7,7 @@
   margin: 2%;
   z-index: 1;
   right: 1%;
-  min-width: 80px;
+  min-width: 60px;
 }
 
 .drop-down-cover {
@@ -21,10 +21,10 @@
 
   font-family: "Patua One", cursive;
 
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 500;
-  height: 40px;
-  line-height: 20px;
+  height: fit-content;
+
   list-style: none;
 
   outline: none;
@@ -55,10 +55,9 @@
   display: inline-block;
   font-family: "Patua One", cursive;
 
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 500;
-  height: 40px;
-  line-height: 20px;
+  height: fit-content;
   list-style: none;
 
   outline: none;

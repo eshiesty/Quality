@@ -35,7 +35,7 @@ const AccountCreation = () => {
         confirmpassword: confirmpassword,
         username: username,
         name: name,
-        dob: dob,
+        dob: dob, //fix this later
       })
     );
 

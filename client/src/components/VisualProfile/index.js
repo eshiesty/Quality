@@ -17,14 +17,11 @@ const VisualProfile = ({ platform }) => {
 
       .then((res) => {
         setProfile(res);
-        console.log(profile);
-        console.log("it worked");
-        console.log(res);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [username]);
 
   if (platform === "browser") {
     return (
@@ -44,7 +41,13 @@ const VisualProfile = ({ platform }) => {
           <br />
           following
         </div>
-        <PostHolder platform="browser" page="profile" id={profile._id} />
+        <PostHolder
+          platform="browser"
+          page="profile"
+          id={profile.data._id}
+          name={profile.data.name}
+          handle={profile.data.username}
+        />
       </div>
     );
   } else if (platform === "mobile") {

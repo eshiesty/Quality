@@ -24,26 +24,56 @@ const Landing = () => {
     setPasswordShown(!passwordShown);
   };
   useEffect(() => {
-    if (loggedIn) {
+    //check to see if we are logged in in local storage
+    //if we are logged in, dispatch the information to redux
+    //store, and go to daily
+
+    const loggedInUser = JSON.parse(localStorage.getItem("user")); //forgot to close
+    console.log(loggedInUser);
+    let persistLog = false;
+    if (loggedInUser) {
+      persistLog = true;
+      dispatchUser(loggedInUser);
+    }
+    if (loggedIn || persistLog) {
       navigate("/daily");
     }
   });
+
+  const dispatchUser = (info) => {
+    //redundant function
+    dispatch(
+      logIn({
+        email: info.email,
+        name: info.name,
+        username: info.username,
+        userId: info._id,
+      })
+    );
+  };
+
   const handleSubmit = async (event) => {
+    //on submitting, make the api post request to the login route
+    //save the login information into local storage
+    //
+
     event.preventDefault();
     setIsLoading(true);
     console.log(event.target);
     const email = event.target.email.value;
     const password = event.target.password.value;
-
     let data = { email, password };
     axios
       .post("api/auth/login", data)
       .then((res) => {
+        localStorage.setItem("user", JSON.stringify(res.data.user));
+
         dispatch(
           logIn({
             email: email,
             name: res.data.user.name,
             username: res.data.user.username,
+            userId: res.data.user._id,
           })
         );
         setIsLoading(false);

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.css";
-import Header from "../components/Header/Header";
+import Header from "../components/Header";
 import ModeButton from "../../src/components/ModeButton";
 import Footer from "../components/Footer";
 const Settings = () => {

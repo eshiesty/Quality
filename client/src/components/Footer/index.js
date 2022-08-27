@@ -23,7 +23,7 @@ const Footer = () => {
     <div
       className={`bottom-div ${
         active === "/" || active === "/createaccount" ? "hidden" : ""
-      }`}
+      } ${mode === "DARK" ? "DarkModeBack" : "LightModeBack"}`}
     >
       <button
         className={

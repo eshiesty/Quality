@@ -135,7 +135,6 @@ router.get("/current", requiresAuth, (req, res) => {
 //@acess Public
 router.post("/retrieve/username", requiresAuth, async (req, res) => {
   try {
-    console.log(req);
     if (req.body.username === null) {
       return res.status(412).send("no user searched");
     }

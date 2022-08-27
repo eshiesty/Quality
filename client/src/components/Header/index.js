@@ -10,7 +10,11 @@ const Header = () => {
   const mode = useSelector((state) => state.visual.mode);
   const textColor = mode === "DARK" ? "DarkModeFont" : "#LightModeFont";
   return (
-    <div className="centered-div">
+    <div
+      className={`centered-div top-bar ${
+        mode === "DARK" ? "DarkModeBack" : "LightModeBack"
+      }`}
+    >
       <Search />
       <h1
         onClick={() => {

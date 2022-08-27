@@ -1,7 +1,7 @@
 .inline {
   display: inline-block;
 }
-.input {
+.bar {
   width: 17vw;
   height: 3vw;
   border: none;
@@ -10,7 +10,9 @@
   outline: none;
   font-size: 1.5vw;
   font-weight: bold;
-
+  position: fixed;
+  left: 3vw;
+  top: 2vw;
   padding: 0 4vmin;
   box-shadow: var(--inner-shadow);
   font-family: "Lato", sans-serif;

@@ -11,6 +11,7 @@ const logReducer = createReducer(INITIAL_LOG, (builder) => {
       state.email = action.payload.email;
       state.username = action.payload.username;
       state.name = action.payload.name;
+      state.userId = action.payload.userId;
     })
     .addCase(logOut, (state, action) => {
       state.loggedIn = false;
@@ -28,6 +29,7 @@ const logReducer = createReducer(INITIAL_LOG, (builder) => {
       state.password = action.payload.password;
       state.confirmpassword = action.payload.confirmpassword;
       state.dob = action.payload.dob;
+      state.userId = action.payload.userId;
     });
 });
 

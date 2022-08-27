@@ -7,6 +7,7 @@ import axios from "axios";
 import { logOut } from "../../actions";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { logIn } from "../../actions";
 const LogDropdown = () => {
   const navigate = useNavigate();
   const mode = useSelector((state) => state.visual.mode);
@@ -14,12 +15,30 @@ const LogDropdown = () => {
   const currentuser = useSelector((state) => state.login.username);
   const dispatch = useDispatch();
   const loginStatus = useSelector((state) => state.login.loggedIn);
+  const loggedInUser = JSON.parse(localStorage.getItem("user")); //forgot to close
 
+  //Since this is displayed on every page, this will prevent
+  //the user from being signed out after a page refresh.
   useEffect(() => {
     if (loginStatus === false) {
-      navigate("/");
+      if (loggedInUser) {
+        dispatchUser(loggedInUser);
+      } else {
+        navigate("/");
+      }
     }
   });
+  const dispatchUser = (info) => {
+    //redundant function
+    dispatch(
+      logIn({
+        email: info.email,
+        name: info.name,
+        username: info.username,
+        userId: info._id,
+      })
+    );
+  };
   const menu = () => {
     if (hidden) {
       return <></>;
@@ -75,7 +94,8 @@ const LogDropdown = () => {
                 setHidden(!hidden);
                 axios.put("/api/auth/logout").then((res) => {
                   dispatch(logOut({}));
-                  console.log("api request completed");
+                  localStorage.clear();
+                  navigate("/");
                 });
               }}
             >
