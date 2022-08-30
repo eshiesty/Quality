@@ -9,6 +9,7 @@
   overflow: hidden;
   min-height: 60%;
   max-width: 100%;
+  min-width: 250px;
 }
 .mobile-profile-container {
   margin: auto;
@@ -27,7 +28,11 @@
   position: absolute;
   left: 2%;
 }
-
+.follow-button-placement {
+  top: 0vw;
+  left: 30vw;
+  position: relative;
+}
 .name {
   font-family: "Patua One", cursive;
   font-size: 3vw;

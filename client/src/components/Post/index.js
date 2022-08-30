@@ -5,6 +5,8 @@ import likedicon from "../../icons/likedicon.svg";
 import unlikedicon from "../../icons/unlikedicon.svg";
 import lightmodeheartwhite from "../../icons/lightmodeheartwhite.svg";
 import lightmodeheartred from "../../icons/lightmodeheartred.svg";
+import ModalButton from "../ModalButton";
+
 import axios from "axios";
 import { useNavigate } from "react-router";
 import { useState } from "react";
@@ -12,6 +14,7 @@ import { useDispatch } from "react-redux";
 import { rerender } from "../../actions";
 import { useEffect } from "react";
 import { DateTime } from "luxon";
+
 const Post = ({
   platform,
   content,
@@ -26,20 +29,13 @@ const Post = ({
   const userId = useSelector((state) => state.login.userId);
   const dispatch = useDispatch();
   // const [likeAmount, setLikeAmount] = useState(0);
-
   const [liked, setLiked] = useState(false);
   const mode = useSelector((state) => state.visual.mode);
   const currentUser = useSelector((state) => state.login.username);
   const navigate = useNavigate();
   const rend = useSelector((state) => state.render.render);
-  const DeletePost = () => {
-    axios.put("/api/posts/delete", { postId }).then(() => {
-      dispatch(rerender());
-    });
-  };
-  useEffect(() => {
-    isLiked();
-  }, []);
+  const ownPost = currentUser === handle;
+
   const isLiked = () => {
     axios
       .post("/api/posts/isLikedBy", { postId: postId, userId: userId })
@@ -53,6 +49,7 @@ const Post = ({
   };
 
   const ReturnHeart = () => {
+    isLiked();
     if (mode === "DARK") {
       if (liked) {
         return lightmodeheartred;
@@ -69,7 +66,6 @@ const Post = ({
   };
 
   const likeLogic = () => {
-    console.log(userId);
     if (!liked) {
       axios.put("/api/posts/like", { postId, userId }).then((res) => {
         setLiked(true);
@@ -90,17 +86,6 @@ const Post = ({
         });
     }
     setLiked(!liked);
-  };
-
-  const DeleteOwnPost = () => {
-    if (currentUser === handle) {
-      return (
-        <button className="post-delete" onClick={DeletePost}>
-          Delete
-        </button>
-      );
-    }
-    return <></>;
   };
 
   if (platform === "browser") {
@@ -133,7 +118,8 @@ const Post = ({
           >
             {interval}
           </div>
-          <DeleteOwnPost />
+          <ModalButton ownPost={ownPost} postId={postId} />
+
           <div
             className={`post-content ${
               mode === "DARK" ? "post-light-text" : "post-dark-text"

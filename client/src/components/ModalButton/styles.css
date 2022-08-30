@@ -1,0 +1,105 @@
+.screen-darken {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: #2e2e2eaa;
+  z-index: 3;
+  align-content: center;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.exit {
+  right: 5%;
+  top: 5%;
+  position: absolute;
+  z-index: 5;
+  width: fit-content;
+}
+.exit:hover {
+  cursor: pointer;
+}
+.option-button {
+  right: 5%;
+  top: 50%;
+  position: absolute;
+}
+.option-button:hover {
+  cursor: pointer;
+}
+.modal-window {
+  width: 30%;
+  height: 50%;
+  background-color: #9adbb3;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: fixed;
+  overflow: hidden;
+  left: 35%;
+  top: 20%;
+  /* left: 0vw;
+  top: 0vh; */
+  align-self: center;
+  z-index: 3;
+}
+.fade-in {
+  opacity: 1;
+  transition: opacity 500ms;
+  transition: all 0.6s ease;
+}
+.fade-out {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+.front {
+  position: absolute;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+.darken {
+}
+
+.delete {
+  border-radius: 5%;
+  border-top-left-radius: 0%;
+  border-top-right-radius: 0%;
+  border-style: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  list-style: none;
+  transition: color 100ms;
+  touch-action: manipulation;
+  font-family: "Lato", sans-serif;
+  font-size: 2vw;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 10%;
+  top: 90%;
+  transition: all 300ms;
+  color: red;
+  background-color: #282828;
+}
+.delete:hover {
+  cursor: pionter;
+  background-color: #a82828;
+  color: white;
+}

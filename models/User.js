@@ -20,6 +20,18 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
+    followers: {
+      type: Number,
+    },
+    followerList: {
+      type: Array,
+    },
+    following: {
+      type: Number,
+    },
+    followingList: {
+      type: Array,
+    },
   },
   {
     timestamps: true,

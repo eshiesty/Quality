@@ -108,7 +108,7 @@ router.put("/delete", requiresAuth, async (req, res) => {
 router.put("/like", requiresAuth, async (req, res) => {
   try {
     const isLiked = await Post.findOne({
-      postId: req.body.postId,
+      _id: req.body.postId,
       likeList: { $all: [{ user: req.body.userId }] },
     });
     if (isLiked) {
@@ -137,7 +137,7 @@ router.put("/like", requiresAuth, async (req, res) => {
 router.post("/isLikedBy", requiresAuth, async (req, res) => {
   try {
     const isLiked = await Post.findOne({
-      postId: req.body.postId,
+      _id: req.body.postId,
       likeList: { $all: [{ user: req.body.userId }] },
     });
     if (isLiked) {
@@ -158,7 +158,7 @@ router.post("/isLikedBy", requiresAuth, async (req, res) => {
 router.put("/unlike", requiresAuth, async (req, res) => {
   try {
     const isLiked = await Post.findOne({
-      postId: req.body.postId,
+      _id: req.body.postId,
       likeList: { $all: [{ user: req.body.userId }] },
     });
     if (!isLiked) {
@@ -204,4 +204,5 @@ router.post("/getPost", requiresAuth, async (req, res) => {
     return res.status(500).send("Something went wrong");
   }
 });
+
 module.exports = router;

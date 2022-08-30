@@ -11,7 +11,7 @@ const Header = () => {
   const textColor = mode === "DARK" ? "DarkModeFont" : "#LightModeFont";
   return (
     <div
-      className={`centered-div top-bar ${
+      className={`centered-div-header top-bar ${
         mode === "DARK" ? "DarkModeBack" : "LightModeBack"
       }`}
     >

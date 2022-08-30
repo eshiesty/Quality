@@ -185,4 +185,120 @@ router.put("/logout", requiresAuth, async (req, res) => {
     return res.status(500).send(err.message);
   }
 });
+//@route PUT /api/auth/reset/followers
+//@desc Add/reset a follower field and list to existin gusers
+//@acess Private
+router.put("/reset/followers", requiresAuth, async (req, res) => {
+  try {
+    const updatedUsers = await User.updateMany(
+      {},
+      {
+        $set: {
+          followers: 0,
+          followerList: [],
+          following: 0,
+          followingList: [],
+        },
+      },
+      { upsert: true }
+    );
+    return res.json(updatedUsers);
+  } catch {
+    (err) => {
+      console.log(err);
+      return res.status(500).send(err.message);
+    };
+  }
+});
+
+//@route PUT /api/auth/follow
+//@desc Follow somebody
+//@acess Public
+router.put("/follow", requiresAuth, async (req, res) => {
+  try {
+    const isFollowing = await User.findOne({
+      _id: req.body.targetId,
+      followerList: { $all: [{ user: req.body.followerId }] },
+    });
+    if (isFollowing) {
+      return res.status(500).send("User already followed");
+    }
+    const followUser = await User.updateOne(
+      { _id: req.body.targetId },
+      {
+        $inc: { followers: 1 },
+        $push: { followerList: { user: req.body.followerId } },
+      }
+    );
+    const addFollowing = await User.updateOne(
+      { _id: req.body.followerId },
+      {
+        $inc: { following: 1 },
+        $push: { followingList: { user: req.body.targetId } },
+      }
+    );
+    return res.json(followUser);
+  } catch {
+    (err) => {
+      console.log(err);
+      return res.status(500).send(err.message);
+    };
+  }
+});
+
+//@route PUT /api/auth/unfollow
+//@desc Unfollow somebody
+//@acess Public
+router.put("/unfollow", requiresAuth, async (req, res) => {
+  try {
+    const isFollowing = await User.findOne({
+      _id: req.body.targetId,
+      followerList: { $all: [{ user: req.body.followerId }] },
+    });
+    if (!isFollowing) {
+      return res.status(500).send("User is not already followed");
+    }
+    const unfollowUser = await User.updateOne(
+      { _id: req.body.targetId },
+      {
+        $inc: { followers: -1 },
+        $pull: { followerList: { user: req.body.followerId } },
+      }
+    );
+    const removeFollowing = await User.updateOne(
+      { _id: req.body.followerId },
+      {
+        $inc: { following: -1 },
+        $pull: { followingList: { user: req.body.targetId } },
+      }
+    );
+    return res.json(unfollowUser);
+  } catch {
+    (err) => {
+      console.log(err);
+      return res.status(500).send(err.message);
+    };
+  }
+});
+
+//@route Post /api/auth/isFollowing
+//@desc See if one user is already following another
+//@acess Public
+router.post("/isFollowing", requiresAuth, async (req, res) => {
+  try {
+    const isFollowing = await User.findOne({
+      _id: req.body.targetId,
+      followerList: { $all: [{ user: req.body.followerId }] },
+    });
+    if (isFollowing) {
+      return res.send("true");
+    } else {
+      return res.send("false");
+      // return res.status(300).send("not liked");
+    }
+  } catch (err) {
+    console.log(err);
+    return res.status(500).send("Something went wrong");
+  }
+});
 module.exports = router;

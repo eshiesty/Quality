@@ -12,7 +12,9 @@ import cameraiconellis from "../icons/cameraiconellis.png";
 import styles from "./styles.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Create = () => {
+  const username = useSelector((state) => state.login.username);
   const navigate = useNavigate();
   const [displayImage, setDisplayImage] = useState(cameraiconellis);
   const [isSelected, setSelected] = useState("");
@@ -39,7 +41,7 @@ const Create = () => {
     axios
       .post("/api/posts/create", data)
       .then(() => {
-        navigate("/profile/ellis");
+        navigate(`/profile/${username}`);
       })
       .catch((err) => {
         if (err?.response?.data) {

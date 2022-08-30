@@ -15,6 +15,7 @@ const store = configureStore({
 });
 //const store = legacy_createStore(reducers, applyMiddleware(thunk));
 const container = document.getElementById("root");
+
 const root = ReactDOMClient.createRoot(container);
 root.render(
   <CookiesProvider>

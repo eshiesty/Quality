@@ -1,10 +1,11 @@
-/* .centered-div {
+.centered-div-header {
   position: sticky;
   left: 0;
   top: 0;
   width: 100%;
   text-align: center;
-} */
+  min-width: 400px;
+}
 
 .LogoText {
   color: #9adbb3;

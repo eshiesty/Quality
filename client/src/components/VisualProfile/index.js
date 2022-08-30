@@ -2,15 +2,17 @@ import React from "react";
 import Styles from "./styles.css";
 import ProfilePhoto from "../ProfilePhoto";
 import PostHolder from "../PostHolder";
+import FollowButton from "../FollowButton";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 const VisualProfile = ({ platform }) => {
-  let prerender = { name: "", username: "" };
+  let prerender = { name: "", username: "", followers: "", following: "" };
   let data = { prerender };
   const [profile, setProfile] = useState({ data });
   const { username } = useParams();
+
   useEffect(() => {
     axios
       .post("/api/auth/retrieve/username", { username })
@@ -32,12 +34,15 @@ const VisualProfile = ({ platform }) => {
         <div className="name name-placement inline">{profile.data.name}</div>
         <div className="handle">@{profile.data.username}</div>
         <div className="follow ers inline">
-          652k
+          {profile.data.followers}
           <br />
           followers
         </div>
+        {/* <div className="follow-button-placement"> */}
+        <FollowButton ProfileUser={profile} />
+        {/* </div> */}
         <div className="follow ing inline">
-          33
+          {profile.data.following}
           <br />
           following
         </div>

@@ -1,0 +1,52 @@
+.button-location {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+.follow-button {
+  background-color: #5fb378;
+  border-radius: 10vw;
+  border-style: dashed;
+  box-sizing: border-box;
+  border-color: #282828;
+  color: white;
+  /* color: #ffffff; */
+  cursor: pointer;
+  font-family: "Patua One", cursive;
+  font-size: 1.5vw;
+  font-weight: 500;
+  list-style: none;
+  outline: none;
+  transition: all 100ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 10vw;
+  position: relative;
+  top: 7.5vw;
+  right: 2vw;
+  z-index: 10;
+}
+
+.follow-button:hover {
+  transition: all 200ms;
+  background-color: #5fb378aa;
+  cursor: pointer;
+}
+
+.following-button {
+  background-color: #535353;
+  border-style: solid;
+}
+.following-button:hover {
+  background-color: #535353aa;
+  border-style: solid;
+}
+
+.profile-button {
+  background-color: #535353;
+  border-style: solid;
+}
+.profile-button:hover {
+  background-color: #535353aa;
+}
