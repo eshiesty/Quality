@@ -35,6 +35,17 @@ router.post("/register", async (req, res) => {
       return res.status(400).json({ error: "This email is already in use." });
     }
 
+    //check if username already exists
+    const existingUserName = await User.findOne({
+      username: new RegExp("^" + req.body.username + "$", "i"), //validate username for lower and upper case
+    });
+
+    if (existingUserName) {
+      return res
+        .status(400)
+        .json({ error: "This username is already in use." });
+    }
+
     //hash the password
     const hashPassword = await bcrypt.hash(req.body.password, 12);
     const hashConfirmPassword = await bcrypt.hash(req.body.confirmpassword, 12);

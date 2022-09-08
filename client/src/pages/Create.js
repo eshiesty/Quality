@@ -19,11 +19,18 @@ const Create = () => {
   const [displayImage, setDisplayImage] = useState(cameraiconellis);
   const [isSelected, setSelected] = useState("");
   const [errs, setErrs] = useState("");
-  const onImageChange = (event) => {
-    if (event.target.files && event.target.files[0]) {
-      const image = URL.createObjectURL(event.target.files[0]);
-      setDisplayImage(image);
-    }
+  // const onImageChange = (event) => {
+  //   if (event.target.files && event.target.files[0]) {
+  //     const image = URL.createObjectURL(event.target.files[0]);
+  //     setDisplayImage(image);
+  //   }
+  // };
+  const handleFileChange = (e) => {
+    const img = {
+      preview: URL.createObjectURL(e.target.files[0]),
+      data: e.target.files[0],
+    };
+    setDisplayImage(img);
   };
   const changeSelection = (button) => {
     if (isSelected === button) {
@@ -52,6 +59,22 @@ const Create = () => {
           ]);
         }
       });
+    console.log(displayImage);
+    //post the image to google cloud storage
+    let formData = new FormData();
+    formData.append("file", displayImage.data);
+    console.log(formData);
+    axios
+      .post("http://localhost:5001/upload-file-to-cloud-storage", {
+        formData,
+        // headers: {
+        //   "Content-Type": "application/json",
+        //   // "Authorization": "Bearer " + token,
+        //   "Access-Control-Allow-Methods": "GET",
+        //   "Access-Control-Allow-Origin": "POST",
+        // },
+      })
+      .then((res) => console.log(res));
   };
   return (
     <div>
@@ -92,12 +115,12 @@ const Create = () => {
             <label className="button-1 centered-div">
               <img
                 className="camera-icon"
-                src={displayImage}
+                src={displayImage.preview}
                 alt="camera icon"
               />
               <h1>Select image</h1>
               <input
-                onChange={onImageChange}
+                onChange={handleFileChange}
                 type="file"
                 accept="image/png, image/jpg, image/gif, image/jpeg"
                 className="file-upload"

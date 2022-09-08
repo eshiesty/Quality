@@ -7,12 +7,14 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const VisualProfile = ({ platform }) => {
   let prerender = { name: "", username: "", followers: "", following: "" };
   let data = { prerender };
   const [profile, setProfile] = useState({ data });
   const { username } = useParams();
-
+  const navigate = useNavigate();
+  const [notFound, setNotFound] = useState(false);
   useEffect(() => {
     axios
       .post("/api/auth/retrieve/username", { username })
@@ -21,10 +23,20 @@ const VisualProfile = ({ platform }) => {
         setProfile(res);
       })
       .catch((err) => {
+        setNotFound(true);
         console.log(err);
       });
   }, [username]);
-
+  if (notFound) {
+    return (
+      <>
+        <h1 className="error">404: User not found ☹</h1>
+        <button className="home-button" onClick={() => navigate("/home")}>
+          home
+        </button>
+      </>
+    );
+  }
   if (platform === "browser") {
     return (
       <div className="profile-container">

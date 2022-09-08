@@ -8,6 +8,7 @@ import Profile from "../pages/Profile";
 import Create from "../pages/Create";
 import Landing from "../pages/Landing";
 import Settings from "../pages/Settings";
+import EditProfile from "../pages/EditProfile";
 import AccountCreation from "../pages/AccountCreation";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
         <Route exact path="/create" element={<Create />} />
         <Route exact path="/createaccount" element={<AccountCreation />} />
         <Route exact path="/settings" element={<Settings />} />
+        <Route exact path="/editprofile" element={<EditProfile />} />
         <Route exact path="/" element={<Landing />} />
       </Routes>
     </Router>

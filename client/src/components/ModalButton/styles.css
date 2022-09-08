@@ -32,9 +32,13 @@
   cursor: pointer;
 }
 .option-button {
-  right: 5%;
-  top: 50%;
+  right: 3%;
+  top: 10%;
   position: absolute;
+  background-color: #ffffff00;
+  border: none;
+  color: white;
+  font-size: 2vw;
 }
 .option-button:hover {
   cursor: pointer;

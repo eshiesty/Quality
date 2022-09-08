@@ -37,6 +37,11 @@
   font-family: "Patua One", cursive;
   font-size: 3vw;
 }
+.error {
+  font-family: "Patua One", cursive;
+  font-size: 7vw;
+  color: #9adbb3;
+}
 .mobile-name {
   font-family: "Patua One", cursive;
   font-size: 7vw;
@@ -97,4 +102,37 @@
 .mobile-ing {
   position: relative;
   left: 65vw;
+}
+
+.home-button {
+  background-color: #9adbb3ff;
+  border-radius: 8 px;
+  border-style: none;
+  box-sizing: border-box;
+  /* color: #ffffff; */
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Patua One", cursive;
+
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 2%;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.home-button:hover {
+  background-color: #9adbb3aa;
+  cursor: pointer;
 }

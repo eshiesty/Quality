@@ -8,6 +8,8 @@ import { logOut } from "../../actions";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { logIn } from "../../actions";
+
+import { motion, AnimatePresence } from "framer-motion";
 const LogDropdown = () => {
   const navigate = useNavigate();
   const mode = useSelector((state) => state.visual.mode);
@@ -45,63 +47,70 @@ const LogDropdown = () => {
     } else {
       return (
         <>
-          <div>
-            <hr
-              className={`divider-line ${
-                mode === "DARK" ? "light-background" : "dark-background"
-              }`}
-            />
-            <button
-              className={`drop-down-option ${
-                mode === "DARK" ? "light-component" : "dark-component"
-              }`}
-              onClick={() => {
-                setHidden(!hidden);
-                navigate("/settings");
-              }}
-            >
-              settings
-            </button>
-          </div>
-          <div>
-            <hr
-              className={`divider-line ${
-                mode === "DARK" ? "light-background" : "dark-background"
-              }`}
-            />
-            <button
-              className={`drop-down-option ${
-                mode === "DARK" ? "light-component" : "dark-component"
-              }`}
-              onClick={() => {
-                setHidden(!hidden);
-              }}
-            >
-              help
-            </button>
-          </div>
-          <div>
-            <hr
-              className={`divider-line ${
-                mode === "DARK" ? "light-background" : "dark-background"
-              }`}
-            />
-            <button
-              className={`drop-down-option ${
-                mode === "DARK" ? "light-component" : "dark-component"
-              }`}
-              onClick={() => {
-                setHidden(!hidden);
-                axios.put("/api/auth/logout").then((res) => {
-                  dispatch(logOut({}));
-                  localStorage.clear();
-                  navigate("/");
-                });
-              }}
-            >
-              logout
-            </button>
-          </div>
+          <motion.div
+            key="window"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, zIndex: 1 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+          >
+            <div>
+              <hr
+                className={`divider-line ${
+                  mode === "DARK" ? "light-background" : "dark-background"
+                }`}
+              />
+              <button
+                className={`drop-down-option ${
+                  mode === "DARK" ? "light-component" : "dark-component"
+                }`}
+                onClick={() => {
+                  setHidden(!hidden);
+                  navigate("/settings");
+                }}
+              >
+                settings
+              </button>
+            </div>
+            <div>
+              <hr
+                className={`divider-line ${
+                  mode === "DARK" ? "light-background" : "dark-background"
+                }`}
+              />
+              <button
+                className={`drop-down-option ${
+                  mode === "DARK" ? "light-component" : "dark-component"
+                }`}
+                onClick={() => {
+                  setHidden(!hidden);
+                }}
+              >
+                help
+              </button>
+            </div>
+            <div>
+              <hr
+                className={`divider-line ${
+                  mode === "DARK" ? "light-background" : "dark-background"
+                }`}
+              />
+              <button
+                className={`drop-down-option ${
+                  mode === "DARK" ? "light-component" : "dark-component"
+                }`}
+                onClick={() => {
+                  setHidden(!hidden);
+                  axios.put("/api/auth/logout").then((res) => {
+                    dispatch(logOut({}));
+                    localStorage.clear();
+                    navigate("/");
+                  });
+                }}
+              >
+                logout
+              </button>
+            </div>
+          </motion.div>
         </>
       );
     }

@@ -58,7 +58,7 @@
   font-size: 2vw;
   position: relative;
   left: 3vw;
-  word-wrap: normal;
+  word-wrap: break-word;
   top: -3vw;
   width: 53vw;
 }
@@ -66,15 +66,15 @@
   font-family: "Lato", sans-serif;
   font-size: 2vw;
   position: relative;
-  right: -35vw;
+  right: -40vw;
 }
 .post-interval {
   font-family: "Lato", sans-serif;
   font-size: 2vw;
   position: absolute;
   /* text-align: right; */
-  right: 2vw;
-  top: 0vw;
+  right: 20vw;
+  bottom: 1.4vw;
 }
 
 .post-delete {
@@ -131,16 +131,16 @@
 .post-heart-icon {
   width: 2.5vw;
   height: 2.5vw;
-  left: 1.8vw;
-  top: 11vw;
+  left: 1.3vw;
+  bottom: 3vw;
   position: absolute;
 }
 .post-heart-icon:hover {
   cursor: pointer;
 }
 .post-like-amount {
-  left: 2.5vw;
-  top: 13vw;
+  left: 2vw;
+  bottom: 1vw;
   font-size: 2vw;
   position: absolute;
   text-align: center;
