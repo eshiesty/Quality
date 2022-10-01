@@ -352,6 +352,15 @@
   top: 0%;
   position: absolute;
 }
+.loader {
+  height: 100%;
+  width: 0px;
+  background-color: #282828;
+  display: inline-block;
+  left: 50%;
+  top: 0%;
+  position: absolute;
+}
 .horizontal-line {
   min-width: 100%;
   height: 5px;

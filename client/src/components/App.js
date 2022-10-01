@@ -10,6 +10,7 @@ import Landing from "../pages/Landing";
 import Settings from "../pages/Settings";
 import EditProfile from "../pages/EditProfile";
 import AccountCreation from "../pages/AccountCreation";
+import Activity from "../pages/Activity";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route exact path="/createaccount" element={<AccountCreation />} />
         <Route exact path="/settings" element={<Settings />} />
         <Route exact path="/editprofile" element={<EditProfile />} />
+        <Route exact path="/activity" element={<Activity />} />
         <Route exact path="/" element={<Landing />} />
       </Routes>
     </Router>

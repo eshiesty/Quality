@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Post = require("../models/Post");
-
+const User = require("../models/User");
 const requiresAuth = require("../middleware/permissions");
 const validatePost = require("../validation/postValidation");
 
@@ -202,6 +202,141 @@ router.post("/getPost", requiresAuth, async (req, res) => {
   } catch (err) {
     console.log(err);
     return res.status(500).send("Something went wrong");
+  }
+});
+
+// @route POST /api/posts/getFollowingDaily
+// @desc Retrieve your daily timeline
+// @acess Public
+
+router.post("/getFollowingDaily", requiresAuth, async (req, res) => {
+  try {
+    //get get a list of your following
+    const user = await User.findOne({ _id: req.body.id });
+
+    //retrieve posts from your following
+    let dailyFeedIds = [];
+
+    for (i = 0; i < user.followingList.length; i++) {
+      //for each following user
+
+      //find all the day posts
+      const dailyFeed = await Post.find({
+        interval: "day",
+        user: user.followingList[i].user,
+      });
+      for (g = 0; g < dailyFeed.length; g++) {
+        //for each post there is, add it to the array
+        if (dailyFeed[g]) {
+          console.log(dailyFeed[g]);
+          dailyFeedIds.push({
+            id: dailyFeed[g]._id,
+            createdAt: dailyFeed[g].createdAt,
+          });
+        }
+      }
+    }
+    //returns array of the id's for your daily feed`
+    return res.json(dailyFeedIds);
+  } catch (err) {
+    console.log(err);
+    return res.status(500).send("Something went wrong");
+  }
+});
+
+// @route POST /api/posts/getFollowingWeekly
+// @desc Retrieve your weekly timeline
+// @acess Public
+
+router.post("/getFollowingWeekly", requiresAuth, async (req, res) => {
+  try {
+    //get get a list of your following
+    const user = await User.findOne({ _id: req.body.id });
+
+    //retrieve posts from your following
+    let weeklyFeedIds = [];
+
+    for (i = 0; i < user.followingList.length; i++) {
+      //for each following user
+
+      //find all the week posts
+      const weeklyFeed = await Post.find({
+        interval: "week",
+        user: user.followingList[i].user,
+      });
+      for (g = 0; g < weeklyFeed.length; g++) {
+        //for each post there is, add it to the array
+        if (weeklyFeed[g]) {
+          weeklyFeedIds.push({
+            id: weeklyFeed[g]._id,
+            createdAt: weeklyFeed[g].createdAt,
+          });
+        }
+      }
+    }
+    //returns array of the id's for your weekly feed`
+    return res.json(weeklyFeedIds);
+  } catch (err) {
+    console.log(err);
+    return res.status(500).send("Something went wrong");
+  }
+});
+
+// @route POST /api/posts/getFollowingMonthly
+// @desc Retrieve your Monthly timeline
+// @acess Public
+
+router.post("/getFollowingMonthly", requiresAuth, async (req, res) => {
+  try {
+    //get get a list of your following
+    const user = await User.findOne({ _id: req.body.id });
+
+    //retrieve posts from your following
+    let monthlyFeedIds = [];
+
+    for (i = 0; i < user.followingList.length; i++) {
+      //for each following user
+
+      //find all the week posts
+      const monthlyFeed = await Post.find({
+        interval: "month",
+        user: user.followingList[i].user,
+      });
+      for (g = 0; g < monthlyFeed.length; g++) {
+        //for each post there is, add it to the array
+        if (monthlyFeed[g]) {
+          monthlyFeedIds.push({
+            id: monthlyFeed[g]._id,
+            createdAt: monthlyFeed[g].createdAt,
+          });
+        }
+      }
+    }
+    //returns array of the id's for your monthly feed`
+    return res.json(monthlyFeedIds);
+  } catch (err) {
+    console.log(err);
+    return res.status(500).send("Something went wrong");
+  }
+});
+
+// @route POST /api/posts/view/post
+// @desc Retrieve a singular post
+// @acess Public
+
+router.post("/view/post", requiresAuth, async (req, res) => {
+  try {
+    const post = await Post.findOne({
+      _id: req.body.postId,
+    });
+    if (!post) {
+      return res.status(404).send("Post doesn't exist");
+    }
+
+    return res.json(post);
+  } catch (err) {
+    console.log(err);
+    return res.status(500).send(err.message);
   }
 });
 

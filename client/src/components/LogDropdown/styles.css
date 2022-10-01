@@ -1,5 +1,5 @@
 .drop-down-holder {
-  width: 1vw;
+  width: fit-content;
   /* position: absolute; */
   position: fixed;
   cursor: pointer;

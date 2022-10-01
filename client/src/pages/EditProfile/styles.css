@@ -1,0 +1,77 @@
+.edit-input {
+  width: 17vw;
+  height: 3vw;
+  border: none;
+
+  border-radius: 3vw;
+  outline: none;
+  font-size: 1.5vw;
+  font-weight: bold;
+
+  padding: 0 4vmin;
+  box-shadow: var(--inner-shadow);
+  font-family: "Lato", sans-serif;
+  background: whitesmoke;
+  color: var(--primary);
+  caret-color: var(--primary);
+  -webkit-transition: 0.1s;
+  transition: 0.3s;
+  border: 2px solid rgb(217, 216, 216);
+}
+.edit-input:focus {
+  border: 2px solid #555;
+}
+.input-subtitle {
+  position: absolute;
+  font-family: "Lato", sans-serif;
+  font-size: 0.7vw;
+  padding-top: 0.2vw;
+  padding-left: 1vw;
+  /* text-align: right; */
+  /* align-content: rigleht; */
+}
+
+.edit-submit {
+  background-color: rgb(37, 118, 65);
+  border-radius: 1vw;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Patua One", cursive;
+  font-size: 2vw;
+  font-weight: 500;
+  height: fit-content;
+
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: 0.1s;
+}
+
+.edit-submit:hover,
+.edit-submit:focus {
+  transition: 0.3s;
+  background-color: #5da378aa;
+}
+.edit-profile-title {
+  font-family: "Lato", sans-serif;
+  font-size: 2vw;
+}
+.available {
+  font-family: "Lato", sans-serif;
+}
+.un {
+  color: red;
+}

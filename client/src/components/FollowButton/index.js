@@ -5,7 +5,9 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { rerender } from "../../actions";
+import { useNavigate } from "react-router-dom";
 const FollowButton = ({ ProfileUser }) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.login);
   const [isFollowing, setIsFollowing] = useState(false);
@@ -38,12 +40,17 @@ const FollowButton = ({ ProfileUser }) => {
       setIsFollowing(false);
     });
   };
-
+  const ProfileEdit = () => {
+    navigate("/editprofile");
+  };
   const UserLogic = () => {
     if (currentUser.username === ProfileUser.data.username) {
       return (
         <>
-          <button className="follow-button profile-button">
+          <button
+            onClick={ProfileEdit}
+            className="follow-button profile-button"
+          >
             <nobr>edit profile</nobr>
           </button>
         </>

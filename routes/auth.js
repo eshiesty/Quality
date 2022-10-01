@@ -312,4 +312,137 @@ router.post("/isFollowing", requiresAuth, async (req, res) => {
     return res.status(500).send("Something went wrong");
   }
 });
+
+//@route Post /api/auth/usernameExists
+//@desc See if one a username is taken
+//@acess Public
+router.post("/usernameExists", requiresAuth, async (req, res) => {
+  //check if username already exists
+  try {
+    const existingUserName = await User.findOne({
+      username: new RegExp("^" + req.body.username + "$", "i"), //validate username for lower and upper case
+    });
+
+    if (existingUserName) {
+      return res.json({ error: "This username is already in use." });
+    }
+    return res.status(200).send("Username available");
+  } catch (err) {
+    return res.status(400).send(err);
+  }
+});
+//@route Post /api/auth/changeUsername
+//@desc See if one a username is taken
+//@acess Public
+router.post("/changeUsername", requiresAuth, async (req, res) => {
+  try {
+    const existingUserName = await User.findOne({
+      username: new RegExp("^" + req.body.username + "$", "i"), //validate username for lower and upper case
+    });
+
+    if (existingUserName) {
+      return res
+        .status(400)
+        .json({ error: "This username is already in use." });
+    } else {
+      const changeUsername = await User.updateOne(
+        { _id: req.body.id },
+        {
+          $set: {
+            username: req.body.username,
+          },
+        }
+      );
+      return res.json(changeUsername);
+    }
+  } catch (err) {
+    console.log(err);
+    return res.status(400).send(err);
+  }
+});
+
+//@route PUT /api/auth/activity/reset
+//@desc Add/activity a follower field and list to existin gusers
+//@acess Private
+router.put("/activity/reset", requiresAuth, async (req, res) => {
+  try {
+    const updatedUsers = await User.updateMany(
+      {},
+      {
+        $set: {
+          activity: [],
+        },
+      },
+      { upsert: true }
+    );
+    return res.json(updatedUsers);
+  } catch {
+    (err) => {
+      console.log(err);
+      return res.status(500).send(err.message);
+    };
+  }
+});
+//@route POST /api/auth/activity/get
+//@desc Add/activity a follower field and list to existin gusers
+//@acess Private
+router.post("/activity/get", requiresAuth, async (req, res) => {
+  try {
+    if (!req.body.userId) {
+      return res.status(404).send("User doesn't exist");
+    }
+    const activity = await User.findOne(
+      { _id: req.body.userId },
+      { activity: 1 }
+    );
+
+    return res.json(activity);
+  } catch {
+    (err) => {
+      console.log(err);
+      return res.status(500).send(err.message);
+    };
+  }
+});
+//@route POST /api/auth/activity/addnotif
+//@desc Add/activity a follower field and list to existin gusers
+//@acess Private
+router.post("/activity/addnotif", requiresAuth, async (req, res) => {
+  try {
+    if (!req.body.senderId) {
+      return res.status(400).send("Bad Request. No user sender");
+    }
+    if (!req.body.type) {
+      return res.status(400).send("Bad Request. No type");
+    }
+    if (!req.body.targetId) {
+      return res.status(400).send("Bad Request. No target");
+    }
+    const newId = new ObjectId();
+    // const currentTime = new Timestamp();
+    const AddNotif = await User.updateOne(
+      { _id: req.body.targetId },
+      {
+        $push: {
+          activity: {
+            sender: req.body.senderId,
+            type: req.body.type,
+            content: req.body.content,
+            post: req.body.post,
+            seen: false,
+            // time: ISODate(),
+          },
+        },
+      }
+    );
+
+    return res.json(AddNotif);
+  } catch {
+    (err) => {
+      console.log(err);
+      return res.status(500).send(err.message);
+    };
+  }
+});
+
 module.exports = router;

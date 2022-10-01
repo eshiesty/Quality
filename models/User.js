@@ -32,6 +32,9 @@ const UserSchema = new Schema(
     followingList: {
       type: Array,
     },
+    activity: {
+      type: Array,
+    },
   },
   {
     timestamps: true,

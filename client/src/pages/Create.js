@@ -59,22 +59,22 @@ const Create = () => {
           ]);
         }
       });
-    console.log(displayImage);
-    //post the image to google cloud storage
-    let formData = new FormData();
-    formData.append("file", displayImage.data);
-    console.log(formData);
-    axios
-      .post("http://localhost:5001/upload-file-to-cloud-storage", {
-        formData,
-        // headers: {
-        //   "Content-Type": "application/json",
-        //   // "Authorization": "Bearer " + token,
-        //   "Access-Control-Allow-Methods": "GET",
-        //   "Access-Control-Allow-Origin": "POST",
-        // },
-      })
-      .then((res) => console.log(res));
+    // console.log(displayImage);
+    // //post the image to google cloud storage
+    // let formData = new FormData();
+    // formData.append("file", displayImage.data);
+    // console.log(formData);
+    // axios
+    //   .post("http://localhost:5001/upload-file-to-cloud-storage", {
+    //     formData,
+    //     // headers: {
+    //     //   "Content-Type": "application/json",
+    //     //   // "Authorization": "Bearer " + token,
+    //     //   "Access-Control-Allow-Methods": "GET",
+    //     //   "Access-Control-Allow-Origin": "POST",
+    //     // },
+    //   })
+    //   .then((res) => console.log(res));
   };
   return (
     <div>
@@ -115,7 +115,7 @@ const Create = () => {
             <label className="button-1 centered-div">
               <img
                 className="camera-icon"
-                src={displayImage.preview}
+                src={displayImage}
                 alt="camera icon"
               />
               <h1>Select image</h1>
