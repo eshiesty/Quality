@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const authRoute = require("./routes/auth");
 const toDosRoute = require("./routes/ToDos");
 const postsRoute = require("./routes/posts");
+const activityRoute = require("./routes/activity");
 const path = require("path");
 const app = express();
 const { Storage } = require("@google-cloud/storage");
@@ -86,6 +87,7 @@ app.listen(process.env.GOOGLEPORT, () => {
 app.use("/api/auth", authRoute); //after get request to api/auth, go to authRoute
 app.use("/api/ToDos", toDosRoute);
 app.use("/api/posts", postsRoute);
+app.use("/api/activity", activityRoute);
 
 mongoose
   .connect(process.env.MONGO_URI)

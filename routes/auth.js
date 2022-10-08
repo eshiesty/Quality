@@ -187,7 +187,7 @@ router.post("/retrieve/id", requiresAuth, async (req, res) => {
 //@route PUT /api/auth/logout
 //@desc Logout user and clear the cookie
 //@acess Private
-router.put("/logout", requiresAuth, async (req, res) => {
+router.put("/logout", async (req, res) => {
   try {
     res.clearCookie("access-token");
     return res.json({ success: true });
