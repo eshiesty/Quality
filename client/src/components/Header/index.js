@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 import LogDropdown from "../LogDropdown";
 import mintervalclock from "../../icons/mintervalclock.svg";
 import Search from "../Search";
+import darkbellplain from "../../icons/darkbellplain.svg";
+import whitebellplain from "../../icons/whitebellplain.svg";
 const Header = () => {
   const navigate = useNavigate();
   const mode = useSelector((state) => state.visual.mode);
@@ -25,7 +27,15 @@ const Header = () => {
         Minterval
       </h1>
       <img className="minterval-logo" src={mintervalclock}></img>
+
       <LogDropdown className="inline" />
+      <img
+        onClick={() => {
+          navigate("/activity");
+        }}
+        className="activity-button"
+        src={whitebellplain}
+      ></img>
     </div>
   );
 };

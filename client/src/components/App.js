@@ -12,6 +12,7 @@ import EditProfile from "../pages/EditProfile";
 import AccountCreation from "../pages/AccountCreation";
 import Activity from "../pages/Activity";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Styles from "./styles.css";
 const App = () => {
   return (
     <Router>

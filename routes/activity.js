@@ -54,7 +54,7 @@ router.post("/getnotifs", requiresAuth, async (req, res) => {
     };
   }
 });
-//@route POST /api/auth/activity/addnotif
+//@route POST /api/activity/addnotif
 //@desc Add/activity a follower field and list to existin gusers
 //@acess Public
 router.post("/addnotif", requiresAuth, async (req, res) => {
@@ -92,12 +92,12 @@ router.post("/addnotif", requiresAuth, async (req, res) => {
 //@acess Public
 router.post("/removenotif", requiresAuth, async (req, res) => {
   try {
-    if (!req.body.activityId) {
-      return res.status(400).send("Bad Request. No user sender");
-    }
-
     const deleteNotif = await Activity.deleteOne({
-      _id: req.body.activityId,
+      sender: req.body.senderId,
+      reciever: req.body.recieverId,
+      type: req.body.type,
+      content: req.body.content,
+      post: req.body.post,
     });
 
     return res.json(deleteNotif);

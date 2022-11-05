@@ -22,6 +22,7 @@ const PostHolder = ({ platform, page, id, name, handle }, posts) => {
   useEffect(() => {
     const userId = id;
     axios.post("/api/posts/view/userposts", { userId }).then((res) => {
+      console.log(res);
       for (let i = 0; i < res.data.length; i++) {
         profilePostsContent[i] = res.data[i].content;
         // const date = new Date(res.data[i].createdAt);

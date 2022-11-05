@@ -10,15 +10,17 @@ import Feed from "../components/Feed";
 import Loader from "../components/Loader";
 const Daily = (props) => {
   const [isLoading, setIsLoading] = useState(false);
-  const id = useSelector((state) => state.login.userId);
   const [postArray, setPostArray] = useState([]);
+  const [tryAgain, setTryAgain] = useState(false);
+  const id = useSelector((state) => state.login.userId);
   useEffect(() => {
     setIsLoading(true);
     renderPosts();
-  }, []);
+  }, [id]);
   const renderPosts = () => {
     axios.post("/api/posts/getFollowingDaily", { id }).then((res) => {
       setPostArray(res.data);
+      console.log(res.data);
       setIsLoading(false);
       return res.data;
     });

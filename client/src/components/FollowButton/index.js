@@ -17,7 +17,6 @@ const FollowButton = ({ ProfileUser }) => {
     axios
       .post("/api/auth/isFollowing", { targetId, followerId })
       .then((res) => {
-        console.log(res);
         if (res.data === true) {
           setIsFollowing(true);
         } else {
@@ -31,6 +30,14 @@ const FollowButton = ({ ProfileUser }) => {
     const followerId = currentUser.userId;
     axios.put("/api/auth/follow", { targetId, followerId }).then(() => {
       setIsFollowing(true);
+      const senderId = followerId;
+      const type = "follow";
+      const recieverId = targetId;
+      axios.post("/api/activity/addnotif", {
+        recieverId,
+        senderId,
+        type,
+      });
     });
   };
   const Unfollow = () => {
@@ -38,6 +45,14 @@ const FollowButton = ({ ProfileUser }) => {
     const followerId = currentUser.userId;
     axios.put("/api/auth/unfollow", { targetId, followerId }).then(() => {
       setIsFollowing(false);
+      const senderId = followerId;
+      const type = "follow";
+      const recieverId = targetId;
+      axios.post("/api/activity/removenotif", {
+        recieverId,
+        senderId,
+        type,
+      });
     });
   };
   const ProfileEdit = () => {

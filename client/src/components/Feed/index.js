@@ -5,6 +5,7 @@ import Styles from "./styles.css";
 import FeedPost from "../FeedPost";
 import { DateTime } from "luxon";
 import Loader from "../Loader";
+import { MobileView, BrowserView } from "react-device-detect";
 const Feed = ({ ids }) => {
   const [isLoading, setIsLoading] = useState(false);
   ids.sort(function (a, b) {
@@ -14,11 +15,23 @@ const Feed = ({ ids }) => {
   // const formattedDate = DateTime.fromISO(res.data.createdAt).toFormat("f");
   // setTime(formattedDate);
   return (
-    <div className="holder-div container">
-      {ids.map((singularId) => {
-        return <FeedPost postId={singularId.id} />;
-      })}
-    </div>
+    <>
+      <BrowserView>
+        <div className="holder-div container-feed">
+          {ids.map((singularId) => {
+            return <FeedPost postId={singularId.id} />;
+          })}
+          <div className="bottom-space"></div>
+        </div>
+      </BrowserView>
+      <MobileView>
+        <div className="holder-div mobile-feed-container">
+          {ids.map((singularId) => {
+            return <FeedPost postId={singularId.id} />;
+          })}
+        </div>
+      </MobileView>
+    </>
   );
 };
 

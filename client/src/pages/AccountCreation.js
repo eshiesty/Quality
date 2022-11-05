@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import eyeicon from "../icons/eyeicon.png";
 import eyestrike from "../icons/eyestrike.png";
-import { signUp } from "../actions";
+import { signUp, logIn } from "../actions";
 import { useNavigate } from "react-router";
 import { MobileView, BrowserView } from "react-device-detect";
 import axios from "axios";
@@ -42,7 +42,17 @@ const AccountCreation = () => {
     let data = { email, password, confirmpassword, username, name, dob };
     axios
       .post("/api/auth/register", data)
-      .then(() => {
+      .then((res) => {
+        console.log(res);
+        dispatch(
+          logIn({
+            email: email,
+            name: name,
+            username: username,
+            userId: res.data._id,
+          })
+        );
+        localStorage.setItem("user", JSON.stringify(res.data));
         navigate("/daily");
       })
       .catch((err) => {

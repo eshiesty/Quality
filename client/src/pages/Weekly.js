@@ -15,7 +15,7 @@ const Weekly = () => {
   useEffect(() => {
     setIsLoading(true);
     renderPosts();
-  }, []);
+  }, [id]);
   const renderPosts = () => {
     axios.post("/api/posts/getFollowingWeekly", { id }).then((res) => {
       setPostArray(res.data);

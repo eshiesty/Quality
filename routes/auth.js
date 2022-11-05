@@ -141,7 +141,7 @@ router.get("/current", requiresAuth, (req, res) => {
   return res.json(req.user);
 });
 
-//@route GET /api/auth/retrieve/username
+//@route POST /api/auth/retrieve/username
 //@desc Return the profile information by username
 //@acess Public
 router.post("/retrieve/username", requiresAuth, async (req, res) => {
@@ -376,67 +376,6 @@ router.put("/activity/reset", requiresAuth, async (req, res) => {
       { upsert: true }
     );
     return res.json(updatedUsers);
-  } catch {
-    (err) => {
-      console.log(err);
-      return res.status(500).send(err.message);
-    };
-  }
-});
-//@route POST /api/auth/activity/get
-//@desc Add/activity a follower field and list to existin gusers
-//@acess Private
-router.post("/activity/get", requiresAuth, async (req, res) => {
-  try {
-    if (!req.body.userId) {
-      return res.status(404).send("User doesn't exist");
-    }
-    const activity = await User.findOne(
-      { _id: req.body.userId },
-      { activity: 1 }
-    );
-
-    return res.json(activity);
-  } catch {
-    (err) => {
-      console.log(err);
-      return res.status(500).send(err.message);
-    };
-  }
-});
-//@route POST /api/auth/activity/addnotif
-//@desc Add/activity a follower field and list to existin gusers
-//@acess Private
-router.post("/activity/addnotif", requiresAuth, async (req, res) => {
-  try {
-    if (!req.body.senderId) {
-      return res.status(400).send("Bad Request. No user sender");
-    }
-    if (!req.body.type) {
-      return res.status(400).send("Bad Request. No type");
-    }
-    if (!req.body.targetId) {
-      return res.status(400).send("Bad Request. No target");
-    }
-    const newId = new ObjectId();
-    // const currentTime = new Timestamp();
-    const AddNotif = await User.updateOne(
-      { _id: req.body.targetId },
-      {
-        $push: {
-          activity: {
-            sender: req.body.senderId,
-            type: req.body.type,
-            content: req.body.content,
-            post: req.body.post,
-            seen: false,
-            // time: ISODate(),
-          },
-        },
-      }
-    );
-
-    return res.json(AddNotif);
   } catch {
     (err) => {
       console.log(err);

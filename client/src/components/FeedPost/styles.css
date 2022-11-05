@@ -17,7 +17,18 @@
 .this-post {
   min-width: 100%;
   width: 100%;
-  min-height: 10vw;
+  min-height: 100px;
+  padding: 2% 0;
+  /* background-color: #9adbb3; */
+  /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
+  position: relative;
+  max-width: 100%;
+  overflow: visible;
+}
+.mobile-this-post {
+  min-width: 100%;
+  width: 100%;
+  min-height: 20vh;
   padding: 2% 0;
   /* background-color: #9adbb3; */
   /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
@@ -27,53 +38,106 @@
 }
 
 .post-pfp {
-  height: 4vw;
-  width: 4vw;
+  height: 35px;
+  width: 35px;
   background-color: #212121;
   border-radius: 50%;
   /* display: inline-block; */
-  top: 1vh;
-  left: 3vh;
+  position: absolute;
+  top: -6px;
+  left: 10px;
+
+  position: relative;
+}
+.mobile-feedpost-pfp {
+  height: 5vh;
+  width: 5vh;
+  background-color: #212121;
+  border-radius: 50%;
+  /* display: inline-block; */
+  top: 0.5vh;
+  left: 1vh;
 
   position: relative;
 }
 .post-display-name {
   font-family: "Patua One", cursive;
-  font-size: 2vw;
+  font-size: 12pt;
+  position: absolute;
+  /* display: inline; */
+  top: 7px;
+  left: 80px;
+}
+.mobile-feedpost-display-name {
+  font-family: "Patua One", cursive;
+  font-size: 12pt;
   position: relative;
   /* display: inline; */
-  left: 7vw;
-  top: -3.5vw;
+  left: 7vh;
+  top: -5.5vh;
 }
 .post-handle {
   font-family: "Patua One", cursive;
-  font-size: 1.5vw;
+  font-size: 10pt;
+  position: absolute;
+  top: 27px;
+  left: 80px;
+  /* display: inline; */
+}
+.mobile-feedpost-handle {
+  font-family: "Patua One", cursive;
+  font-size: 12pt;
   position: relative;
-  top: -3.7vw;
-  left: 7vw;
+  top: -5.7vh;
+  left: 7vh;
   /* display: inline; */
 }
 .post-content {
   font-family: "Lato", sans-serif;
-  font-size: 2vw;
+  font-size: 14pt;
   position: relative;
-  left: 3vw;
+  left: 40px;
   word-wrap: break-word;
-  top: -3vw;
-  width: 53vw;
+  top: -35px;
+  width: 620px;
+  padding-top: 30px;
+}
+.mobile-feedpost-content {
+  font-family: "Lato", sans-serif;
+  font-size: 12pt;
+  position: relative;
+  left: 3vh;
+  word-wrap: break-word;
+  top: -5vh;
+  width: 90%;
 }
 .post-timestamp {
   font-family: "Lato", sans-serif;
-  font-size: 2vw;
+  font-size: 12pt;
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+}
+.mobile-feedpost-timestamp {
+  font-family: "Lato", sans-serif;
+  font-size: 10pt;
   position: relative;
   right: -40vw;
 }
 .post-interval {
   font-family: "Lato", sans-serif;
-  font-size: 2vw;
+  font-size: 14pt;
   position: absolute;
   /* text-align: right; */
-  right: 20vw;
+  right: 10px;
+  bottom: 20px;
+}
+.mobile-feedpost-interval {
+  font-family: "Lato", sans-serif;
+  font-size: 10pt;
+  position: absolute;
+  /* text-align: right; */
+  right: 5vw;
   bottom: 1.4vw;
 }
 .pointer {
@@ -131,25 +195,55 @@
   color: white;
 }
 .post-heart-icon {
-  width: 2.5vw;
-  height: 2.5vw;
+  /* width: 20px; */
+  height: 15px;
+  left: 32px;
+  bottom: 30px;
+  position: absolute;
+}
+.post-comment-icon {
+  height: 65px;
+  left: 67px;
+  bottom: 5px;
+  position: absolute;
+}
+.mobile-feedpost-heart-icon {
+  width: 4vh;
+  height: 4vh;
   left: 1.3vw;
-  bottom: 3vw;
+  bottom: 4.5vh;
   position: absolute;
 }
 .post-heart-icon:hover {
   cursor: pointer;
 }
 .post-like-amount {
-  left: 2vw;
-  bottom: 1vw;
-  font-size: 2vw;
+  left: 37px;
+  bottom: 10px;
+  font-size: 12pt;
+  position: absolute;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
+.post-comment-amount {
+  left: 90px;
+  bottom: 10px;
+  font-size: 12pt;
+  position: absolute;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
+.mobile-feedpost-like-amount {
+  left: 4vw;
+  bottom: 4vw;
+  font-size: 10pt;
   position: absolute;
   text-align: center;
   font-family: "Lato", sans-serif;
 }
 
 .post-comment-icon {
+  cursor: pointer;
 }
 .mobile-post-pfp {
   height: 4vw;

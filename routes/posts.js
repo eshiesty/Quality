@@ -61,6 +61,27 @@ router.get("/view/profileposts", requiresAuth, async (req, res) => {
   }
 });
 
+// @route POST /api/posts/view/profilepostids
+// @desc View the posts from your profile version 2.0
+// @acess Public
+
+router.post("/view/profilepostids", requiresAuth, async (req, res) => {
+  try {
+    const profilePosts = await Post.find(
+      {
+        user: req.body._id,
+        // posts: req.user.posts,
+      },
+      { _id: 1, createdAt: 1 }
+    ).sort({ createdAt: -1 });
+
+    return res.json(profilePosts);
+  } catch (err) {
+    console.log(err);
+    return res.status(500).send(err.message);
+  }
+});
+
 // @route POST /api/posts/view/userposts
 // @desc View the posts from another profile
 // @acess Public
@@ -130,6 +151,7 @@ router.put("/like", requiresAuth, async (req, res) => {
     return res.status(500).send("Something went wrong");
   }
 });
+
 // @route POST /api/posts/isLikedBy
 // @desc Like a post
 // @acess Public

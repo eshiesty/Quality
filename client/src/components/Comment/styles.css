@@ -1,0 +1,22 @@
+.comment-holder {
+  width: 100%;
+  /* height: fit-content; */
+  padding-top: 15px;
+  padding-left: 5px;
+  background-color: #282828;
+  color: #fffde7;
+  position: relative;
+}
+.comment-name {
+  position: relative;
+}
+.comment-content {
+  position: relative;
+  top: 0vw;
+}
+.comment-date {
+  position: absolute;
+
+  right: 0vw;
+  padding-right: 8px;
+}

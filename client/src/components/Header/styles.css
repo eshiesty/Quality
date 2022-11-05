@@ -92,3 +92,11 @@
   position: relative;
   top: 1.5vw;
 }
+.activity-button {
+  width: 5vw;
+  height: 5vw;
+  cursor: pointer;
+  position: fixed;
+  top: 1.5vw;
+  right: 10vw;
+}

@@ -7,6 +7,7 @@ const authRoute = require("./routes/auth");
 const toDosRoute = require("./routes/ToDos");
 const postsRoute = require("./routes/posts");
 const activityRoute = require("./routes/activity");
+const commentRoute = require("./routes/comments");
 const path = require("path");
 const app = express();
 const { Storage } = require("@google-cloud/storage");
@@ -88,6 +89,7 @@ app.use("/api/auth", authRoute); //after get request to api/auth, go to authRout
 app.use("/api/ToDos", toDosRoute);
 app.use("/api/posts", postsRoute);
 app.use("/api/activity", activityRoute);
+app.use("/api/comments", commentRoute);
 
 mongoose
   .connect(process.env.MONGO_URI)

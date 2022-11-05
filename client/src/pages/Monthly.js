@@ -15,7 +15,7 @@ const Monthly = () => {
   useEffect(() => {
     setIsLoading(true);
     renderPosts();
-  }, []);
+  }, [id]);
   const renderPosts = () => {
     axios.post("/api/posts/getFollowingMonthly", { id }).then((res) => {
       setPostArray(res.data);
@@ -23,6 +23,7 @@ const Monthly = () => {
       return res.data;
     });
   };
+
   return (
     <div>
       <Header />
