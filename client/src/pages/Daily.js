@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Feed from "../components/Feed";
 import Loader from "../components/Loader";
+import Sidebar from "../components/Sidebar";
 const Daily = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [postArray, setPostArray] = useState([]);
@@ -33,6 +34,7 @@ const Daily = (props) => {
         <Feed ids={postArray} />
         <div className="loader">{isLoading ? <Loader /> : ""}</div>
       </div>
+      <Sidebar />
       <Footer />
     </div>
   );

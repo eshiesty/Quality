@@ -1,9 +1,9 @@
-* {
+/* * {
   -ms-overflow-style: none;
-}
-::-webkit-scrollbar {
+} */
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
 .HeaderDiv {
   align-content: "center";
 }
@@ -445,24 +445,6 @@
   display: none;
 }
 
-.camera-icon {
-  width: 30.84vmin;
-  height: 20vmin;
-}
-
-.monthly-icon {
-  height: 6vmax;
-  width: 12.1657vmin;
-}
-.weekly-icon {
-  height: 6vmax;
-  width: 9.775vmax;
-  /* width:1.629; RATIO */
-}
-.daily-icon {
-  height: 6vmax;
-  width: 8.306;
-}
 .error-text {
   color: red;
   font-family: "Patua One", cursive;

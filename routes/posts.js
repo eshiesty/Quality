@@ -9,8 +9,13 @@ const validatePost = require("../validation/postValidation");
 //@desc Test the post route
 //@acess Public
 router.post("/test", (req, res) => {
-  //once get to /test endpoint, make reqeust and get response
-  res.send("Auth route working");
+  const d = new Date();
+  console.log(d);
+  const startOfDay = new Date();
+  startOfDay.setUTCHours(0, 0, 0, 0);
+  console.log(startOfDay);
+  // const currentInterval = await Post.find({})
+  // return res.json(currentInterval)
 });
 
 // @route       POST /api/posts/create
@@ -22,6 +27,72 @@ router.post("/create", requiresAuth, async (req, res) => {
     if (!isValid) {
       return res.status(400).json(errors);
     }
+    // //if the post is valid, check the interval validitity
+    const date = new Date();
+    if (req.body.interval === "day") {
+      const startOfDay = new Date();
+      startOfDay.setUTCHours(0, 0, 0, 0);
+      //get beginning of day
+      const currentInterval = await Post.find({
+        interval: "day",
+        createdAt: { $gt: startOfDay },
+      });
+
+      if (!currentInterval.length) {
+        console.log("you're good to go");
+      } else {
+        errors.currentInterval =
+          'You have already posted to "day" for this interval.';
+        console.log(errors);
+        return res.status(400).json(errors);
+      }
+    } else if (req.body.interval === "week") {
+      //
+      //
+      // get beginning of week
+      const startOfWeek = new Date();
+      const day = startOfWeek.getDay();
+      const diff = startOfWeek.getDate() - day + (day === 0 ? -6 : 1);
+      startOfWeek.setDate(diff);
+      startOfWeek.setUTCHours(0, 0, 0, 0);
+
+      const currentInterval = await Post.find({
+        interval: "week",
+        createdAt: { $gt: startOfWeek },
+      });
+
+      if (!currentInterval.length) {
+        console.log("you're good to go");
+      } else {
+        errors.currentInterval =
+          'You have already posted to "week" for this interval.';
+
+        return res.status(400).json(errors);
+      }
+      //
+      //
+    } else if (req.body.interval === "month") {
+      // get beginning of month
+      const startOfMonth = new Date();
+      console.log(startOfMonth.getDay());
+      startOfMonth.setUTCDate(1);
+      startOfMonth.setUTCHours(0, 0, 0, 0);
+      console.log(startOfMonth);
+      const currentInterval = await Post.find({
+        interval: "month",
+        createdAt: { $gt: startOfMonth },
+      });
+
+      if (!currentInterval.length) {
+        console.log("you're good to go");
+      } else {
+        errors.currentInterval =
+          'You have already posted to "month" for this interval.';
+        console.log(errors);
+        return res.status(400).json(errors);
+      }
+    }
+
     //create a new post
     const newPost = new Post({
       user: req.user._id,

@@ -1,0 +1,40 @@
+.sidebar-positioning {
+  left: 0;
+  height: 500px;
+  bottom: 20px;
+  width: 200px;
+  /* background-color: #282828; */
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 1.25);
+  text-align: center;
+  position: sticky;
+}
+.side-button {
+  background-color: #9adbb3ff;
+  border-radius: 5%;
+  border-style: none;
+  box-sizing: border-box;
+  /* color: #ffffff; */
+  cursor: pointer;
+  /* display: inline-block; */
+  font-family: "Patua One", cursive;
+
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 2%;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.side-profile-icon {
+  width: 100px;
+}

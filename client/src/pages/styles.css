@@ -476,17 +476,16 @@
 }
 
 .monthly-icon {
-  height: 6vmax;
-  width: 12.1657vmin;
+  width: 100px;
 }
 .weekly-icon {
-  height: 6vmax;
-  width: 9.775vmax;
+  /* height: 6vmax; */
+  width: 100px;
   /* width:1.629; RATIO */
 }
 .daily-icon {
-  height: 6vmax;
-  width: 8.306;
+  /* height: 6vmax; */
+  width: 100px;
 }
 .error-text {
   color: red;

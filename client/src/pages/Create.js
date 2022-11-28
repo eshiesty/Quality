@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-
-import darkmonthly from "../icons/darkmonthly.png";
-import lightmonthly from "../icons/lightmonthly.png";
+import darkmonthly from "../icons/darkmonthly.svg";
+import lightmonthly from "../icons/lightmonthly.svg";
 import darkdaily from "../icons/darkdaily.png";
 import lightdaily from "../icons/lightdaily.png";
 import darkweekly2 from "../icons/darkweekly2.png";
@@ -51,11 +50,15 @@ const Create = () => {
         navigate(`/profile/${username}`);
       })
       .catch((err) => {
+        console.log(err);
         if (err?.response?.data) {
           setErrs([
+            "\n",
             err.response.data.content,
             "\n",
             err.response.data.interval,
+            "\n",
+            err.response.data.currentInterval,
           ]);
         }
       });
