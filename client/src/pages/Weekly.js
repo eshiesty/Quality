@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Feed from "../components/Feed";
 import Loader from "../components/Loader";
+import Sidebar from "../components/Sidebar";
 const Weekly = () => {
   const id = useSelector((state) => state.login.userId);
   const [postArray, setPostArray] = useState([]);
@@ -26,6 +27,7 @@ const Weekly = () => {
   return (
     <div>
       <Header />
+      <Sidebar />
       <div>
         <Feed ids={postArray} />
         <div className="loader">{isLoading ? <Loader /> : ""}</div>

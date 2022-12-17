@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
+import Sidebar from "../components/Sidebar";
 const Profile = () => {
   // const [profile, setProfile] = useState({});
   // axios.get("/api/auth/retrieve/username", { username }).then((res) => {
@@ -21,6 +22,7 @@ const Profile = () => {
       <BrowserView>
         <div>
           <Header />
+          <Sidebar />
           <div className="profile-holder">
             <VisualProfile platform="browser" />
           </div>

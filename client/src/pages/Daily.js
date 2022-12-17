@@ -30,11 +30,11 @@ const Daily = (props) => {
   return (
     <div>
       <Header />
+      <Sidebar />
       <div>
         <Feed ids={postArray} />
         <div className="loader">{isLoading ? <Loader /> : ""}</div>
       </div>
-      <Sidebar />
       <Footer />
     </div>
   );

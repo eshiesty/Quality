@@ -10,6 +10,7 @@ import lightweekly2 from "../icons/lightweekly2.png";
 import cameraiconellis from "../icons/cameraiconellis.png";
 import styles from "./styles.css";
 import axios from "axios";
+import Sidebar from "../components/Sidebar";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 const Create = () => {
@@ -62,26 +63,11 @@ const Create = () => {
           ]);
         }
       });
-    // console.log(displayImage);
-    // //post the image to google cloud storage
-    // let formData = new FormData();
-    // formData.append("file", displayImage.data);
-    // console.log(formData);
-    // axios
-    //   .post("http://localhost:5001/upload-file-to-cloud-storage", {
-    //     formData,
-    //     // headers: {
-    //     //   "Content-Type": "application/json",
-    //     //   // "Authorization": "Bearer " + token,
-    //     //   "Access-Control-Allow-Methods": "GET",
-    //     //   "Access-Control-Allow-Origin": "POST",
-    //     // },
-    //   })
-    //   .then((res) => console.log(res));
   };
   return (
     <div>
       <Header />
+      <Sidebar />
       <div className="container ">
         <form onSubmit={handleSubmit} className="input-post-parent">
           <div className="left">
