@@ -29,11 +29,13 @@ const Sidebar = () => {
   };
 
   return (
+    //sidebar
     <div
       className={`sidebar-positioning
         //{ active === "/" || active === "/createaccount" ? "hidden" : ""}
        ${mode === "DARK" ? "DarkModeBack" : "LightModeBack"}`}
     >
+      {/* profile */}
       <div
         className="side-option-holder pointer"
         onClick={() => goTo(`/profile/${username}`)}
@@ -66,6 +68,7 @@ const Sidebar = () => {
           }
         ></div>
       </div>
+      {/* create */}
       <div
         className="side-option-holder pointer"
         onClick={() => goTo(`/create`)}
@@ -98,28 +101,28 @@ const Sidebar = () => {
           }
         ></div>
       </div>
-
-      <div onClick={() => goTo("/activity")}>
+      {/* activity */}
+      <div
+        className="side-option-holder pointer"
+        onClick={() => goTo("/activity")}
+      >
+        {location.pathname.includes("/activity") ? (
+          <MotionActivityIcon
+            fill={attributeColor}
+            stroke={attributeColor}
+            initial={{ fill: "FFFDE700", scale: 0.8 }}
+            animate={{ fill: "#FFFDE7", scale: 1 }}
+            transition={{ ease: "easeOut" }}
+          />
+        ) : (
+          <ActivityIcon fill="none" stroke={attributeColor} />
+        )}
         <div
-          className={
-            "side-button " +
-            `${
-              active === "/activity" ? "footer-button-selected" : ""
-            } ${textColor}`
-          }
+          className={`side-button-content ${
+            mode === "DARK" ? "light-font" : "dark-font"
+          }`}
         >
-          {location.pathname.includes("/activity") ? (
-            <MotionActivityIcon
-              fill={attributeColor}
-              stroke={attributeColor}
-              initial={{ fill: "FFFDE700", scale: 0.8 }}
-              animate={{ fill: "#FFFDE7", scale: 1 }}
-              transition={{ ease: "easeOut" }}
-            />
-          ) : (
-            <ActivityIcon fill="none" stroke={attributeColor} />
-          )}
-          <div className="side-button-content">activity</div>
+          activity
         </div>
       </div>
       <div
@@ -139,7 +142,7 @@ const Sidebar = () => {
         ) : (
           <HomeIcon fill="none" stroke={attributeColor} />
         )}
-
+        {/* home */}
         <div
           className={`side-button-content ${
             mode === "DARK" ? "light-font" : "dark-font"

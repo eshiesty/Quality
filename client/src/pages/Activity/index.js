@@ -5,6 +5,7 @@ import Notification from "../../components/Notification";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Header from "../../components/Header";
+import Sidebar from "../../components/Sidebar";
 
 const Activity = () => {
   const [noties, setNoties] = useState([]);
@@ -19,7 +20,7 @@ const Activity = () => {
   return (
     <>
       <Header />
-
+      <Sidebar />
       <div className="noti-holder">
         {noties.map((noti) => {
           const stringified = JSON.stringify(noti);
