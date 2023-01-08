@@ -73,97 +73,11 @@
   /* color: white; */
   text-align: center;
 }
-/* CSS */
-.button-1 {
-  background-color: #9adbb3ff;
-  border-radius: 8 px;
-  border-style: none;
-  box-sizing: border-box;
-  /* color: #ffffff; */
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Patua One", cursive;
-
-  font-size: 14px;
-  font-weight: 500;
-  height: 40px;
-  line-height: 20px;
-  list-style: none;
-  margin: 2%;
-  outline: none;
-  padding: 10px 16px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transition: color 100ms;
-  vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.button-1:hover {
-  background-color: #9adbb3aa;
-  cursor: pointer;
-}
-
-/* 
-.button-log {
-  background-color: rgb(37, 118, 65);
-  border-radius: 1vw;
-  border-style: none;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Patua One", cursive;
-  font-size: 2vw;
-  font-weight: 500;
-  height: fit-content;
-
-  line-height: 20px;
-  list-style: none;
-  margin: 0;
-  outline: none;
-  padding: 10px 16px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transition: color 100ms;
-  vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.button-log:hover,
-.button-log:focus {
-  background-color: #5da378aa;
-} */
-
-.button-1:selected {
-  background-color: #5fb37faa;
-}
 
 .inline {
   display: inline-block;
 }
 
-.container {
-  margin: auto;
-  width: 60%;
-  padding: 2% 0;
-  background-color: #9adbb3;
-  border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  position: relative;
-  overflow: hidden;
-
-  max-width: 100%;
-  /* min-height: 280px; */
-  /* height: 40vh; */
-  /* min-height: 40vmin; */
-}
 .container-sign {
   margin: auto;
   width: 80%;
@@ -211,143 +125,15 @@
   display: flex;
   align-items: center;
 }
-.clock-holder {
-  width: fit-content;
-  /* align-content: center; */
-  margin: auto;
-  width: 220px;
-  transform-origin: center;
-}
-.center-dot {
-  /* margin: auto; */
-  width: 12px;
-  top: 92px;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  position: absolute;
-}
-.clock-frame {
-  margin: auto;
-  width: 200px;
-}
-.clock-hand-holder {
-  top: 4px;
-  width: 40px;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  position: absolute;
-}
-.clock-hand {
-  position: absolute;
 
-  transform-origin: bottom;
-  /* transition: transform 1s linear; */
-  animation-duration: 5s;
-  animation-name: handturn;
-  animation-iteration-count: infinite;
-  animation-direction: forward;
-  /* animation-timing-function: linear; */
-}
-.clock-hand-2 {
-  position: absolute;
-
-  transform-origin: bottom;
-  /* transition: transform 1s linear; */
-  animation-duration: 60s;
-  animation-name: handturn2;
-  animation-iteration-count: infinite;
-  animation-direction: forward;
-  animation-timing-function: linear;
-}
-@keyframes handturn {
-  from {
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes handturn2 {
-  from {
-    transform: rotate(135deg);
-  }
-  to {
-    transform: rotate(495deg);
-  }
-}
-/* .clock-hand:hover {
-} */
-.login-input {
-  width: 418px;
-  max-width: 20%;
-
-  height: 60px;
-  background-color: #202020;
-  /* border-style: dashed; */
-  border-color: #797979;
-  border-width: 1px;
-  border-top-width: 1px;
-  border-top-color: #797979;
-  border-radius: 15px;
-  font-size: 18pt;
-  text-align: right;
-  border-style: solid;
-  color: #fffde7;
-}
-.login-username-position {
-  position: absolute;
-  right: 118px;
-  bottom: 300px;
-}
-.login-password-position {
-  position: absolute;
-  right: 118px;
-  bottom: 200px;
-}
-.login-input:focus {
-  border: 2px solid #555;
-}
-.login-button {
-  border-width: 5px;
-  border-color: #9adbb3;
-  /* background-color: none;
-  fill: none; */
-  background: none;
-  border-radius: 16px;
-  border-style: solid;
-  width: 173px;
-  max-width: 10%;
-  height: 60px;
-  font-size: 30pt;
-  color: #fffde7;
-  font-family: "lato";
-  font-weight: bold;
-  transition: background-color, 300ms;
-  right: 118px;
-  bottom: 120px;
-  position: absolute;
-}
-.login-button:hover {
-  background-color: #9adbb3;
-}
-.signup-button {
-  background-color: #9adbb3;
-  right: 118px;
-  top: 50px;
-}
 .input {
   width: 17vw;
   height: 3vw;
   border: none;
-
   border-radius: 3vw;
   outline: none;
   font-size: 1.5vw;
   font-weight: bold;
-
   padding: 0 4vmin;
   box-shadow: var(--inner-shadow);
   font-family: "Lato", sans-serif;
@@ -434,33 +220,7 @@
   width: 100%;
   display: inline-block;
 }
-.left {
-  margin-left: 5%;
-  float: left;
-  text-align: left;
-  left: 10%;
-  width: 45%;
-  display: inline-block;
-}
-.right {
-  margin-right: 5%;
-  text-align: right;
 
-  width: 45%;
-  right: 10%;
-  float: right;
-  display: inline-block;
-}
-
-.vertical-line {
-  height: 100%;
-  width: 5px;
-  background-color: #282828;
-  display: inline-block;
-  left: 50%;
-  top: 0%;
-  position: absolute;
-}
 .loader {
   height: 100%;
   width: 0px;
@@ -470,19 +230,7 @@
   top: 0%;
   position: absolute;
 }
-.horizontal-line {
-  min-width: 100%;
-  height: 5px;
-  background-color: #282828;
-  display: inline-block;
-  left: 0%;
-  top: 0%;
-  position: relative;
-}
 
-.no-animation {
-  transition: 0s;
-}
 .vertical-spacing {
   margin-top: 10px;
 }
@@ -509,39 +257,13 @@
   position: relative;
   width: 9.51vmin;
   height: 6vmin;
-  /* width: 3.17vmin;
-    height: 2vmin; */
 }
 .mobile-eye-logo-closed {
   position: relative;
   width: 9.51vmin;
   height: 3vmin;
-
-  /* width: 2.96vmin;
-    height: 1vmin; */
 }
 
-.top-margin {
-  margin-top: 5%;
-}
-
-/* .input-box {
-    display: flex;
-    align-items: center;
-    max-width: 300px;
-    background: #fff;
-    border: 1px solid #a0a0a0;
-    border-radius: 4px;
-    padding-left: 0.5rem;
-    overflow: hidden;
-    font-family: sans-serif;
-  }
-  
-  .input-box .prefix {
-    font-weight: 300;
-    font-size: 14px;
-    color: #999;
-  } */
 .prefix {
   position: relative;
   color: #7b7b93;
@@ -556,7 +278,6 @@
   font-size: 1.5vmin;
   font-weight: bold;
   font-family: "Patua One", cursive;
-  /* padding: 0 4vmin; */
   box-shadow: var(--inner-shadow);
   background: whitesmoke;
   color: var(--primary);
@@ -568,11 +289,6 @@
   background-color: #ffffff;
 
   margin: 10px 0;
-}
-
-.baseline-rectangle {
-  width: 100%;
-  height: 10%;
 }
 
 .file-upload {
@@ -588,27 +304,11 @@
   width: 100px;
 }
 .weekly-icon {
-  /* height: 6vmax; */
   width: 100px;
   /* width:1.629; RATIO */
 }
 .daily-icon {
-  /* height: 6vmax; */
   width: 100px;
-}
-.error-text {
-  color: red;
-  font-family: "Lato", sans-serif;
-  font-size: 8pt;
-}
-
-.landing-gradient {
-  background-image: linear-gradient(#3c3c3c, #161616);
-  width: fill;
-  height: fill;
-  position: absolute;
-  left: 0;
-  top: 0;
 }
 
 @keyframes spinner {
@@ -629,54 +329,4 @@
   position: absolute;
   top: 50%;
   right: -32px;
-}
-
-.landing-header {
-  font-size: 70pt;
-  font-family: "lato";
-  color: #9adbb3;
-  left: 110px;
-  position: absolute;
-  translate: 0 130px;
-}
-.bold {
-  font-weight: bold;
-}
-.landing-sub-header-holder {
-  /* color: #9adbb3; */
-  left: 110px;
-  position: absolute;
-  translate: 0 240px;
-}
-.landing-sub-header {
-  font-size: 32pt;
-  font-family: "lato";
-  display: inline-block;
-}
-.landing-body-holder {
-  left: 110px;
-  position: absolute;
-  translate: 0 305px;
-}
-.landing-body {
-  font-size: 16pt;
-  font-family: "lato";
-  color: #9adbb3;
-}
-.bottom-link-holder {
-  justify-content: space-between;
-  width: 30%;
-  display: flex;
-  left: 110px;
-  bottom: 120px;
-  position: absolute;
-}
-.bottom-link {
-  text-decoration: underline;
-  font-family: "lato";
-  font-size: 16pt;
-  color: #fffde7;
-}
-.bottom-link:hover {
-  cursor: pointer;
 }

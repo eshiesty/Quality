@@ -2,13 +2,13 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import eyeicon from "../icons/eyeicon.png";
-import eyestrike from "../icons/eyestrike.png";
-import { signUp, logIn } from "../actions";
+import eyeicon from "../../icons/eyeicon.png";
+import eyestrike from "../../icons/eyestrike.png";
+import { signUp, logIn } from "../../actions";
 import { useNavigate } from "react-router";
 import { MobileView, BrowserView } from "react-device-detect";
 import axios from "axios";
-import styles from "./styles.css";
+import "./styles.css";
 const AccountCreation = () => {
   const [passwordShown, setPasswordShown] = useState(false);
   const [errors, setErrors] = useState("");

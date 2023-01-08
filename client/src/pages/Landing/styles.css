@@ -1,0 +1,211 @@
+.clock-holder {
+  width: fit-content;
+  /* align-content: center; */
+  margin: auto;
+  width: 220px;
+  transform-origin: center;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.center-dot {
+  /* margin: auto; */
+  width: 12px;
+  top: 92px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+}
+.clock-frame {
+  margin: auto;
+  width: 200px;
+}
+.clock-hand-holder {
+  top: 4px;
+  width: 40px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+}
+.clock-hand {
+  position: absolute;
+
+  transform-origin: bottom;
+  /* transition: transform 1s linear; */
+  animation-duration: 5s;
+  animation-name: handturn;
+  animation-iteration-count: infinite;
+
+  /* animation-timing-function: linear; */
+}
+.clock-hand-2 {
+  position: absolute;
+
+  transform-origin: bottom;
+  /* transition: transform 1s linear; */
+  animation-duration: 60s;
+  animation-name: handturn2;
+  animation-iteration-count: infinite;
+  /* animation-direction: forward; */
+  animation-timing-function: linear;
+}
+
+.clock-hand-1-backwards {
+  animation-duration: 2s;
+}
+.clock-hand-2-backwards {
+  animation-duration: 2s;
+  animation-direction: reverse;
+}
+@keyframes handturn {
+  from {
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes handturn2 {
+  from {
+    transform: rotate(135deg);
+  }
+  to {
+    transform: rotate(495deg);
+  }
+}
+/* .clock-hand:hover {
+  } */
+.login-input {
+  width: 418px;
+  max-width: 20%;
+
+  height: 60px;
+  background-color: #202020;
+  /* border-style: dashed; */
+  border-color: #797979;
+  border-width: 1px;
+  border-top-width: 1px;
+  border-top-color: #797979;
+  border-radius: 15px;
+  font-size: 18pt;
+  text-align: right;
+  border-style: solid;
+  color: #fffde7;
+}
+.login-username-position {
+  position: absolute;
+  right: 118px;
+  bottom: 300px;
+}
+.login-password-position {
+  position: absolute;
+  right: 118px;
+  bottom: 200px;
+}
+.login-input:focus {
+  border: 2px solid #555;
+}
+.login-button {
+  border-width: 5px;
+  border-color: #9adbb3;
+  /* background-color: none;
+    fill: none; */
+  background: none;
+  border-radius: 16px;
+  border-style: solid;
+  width: 173px;
+  max-width: 10%;
+  height: 60px;
+  font-size: 16pt;
+  color: #fffde7;
+  font-family: "lato";
+  font-weight: bold;
+  transition: background-color, 300ms;
+  right: 118px;
+  bottom: 100px;
+  position: absolute;
+}
+.login-button:hover {
+  background-color: #9adbb3;
+}
+.signup-button {
+  background-color: #9adbb3;
+  right: 118px;
+  top: 50px;
+  box-shadow: rgba(8, 8, 8, 0.2) 0px 7px 29px 0px;
+}
+
+.landing-header {
+  font-size: 70pt;
+  font-family: "lato";
+  color: #9adbb3;
+  left: 110px;
+  position: absolute;
+  translate: 0 130px;
+}
+.bold {
+  font-weight: bold;
+}
+.landing-sub-header-holder {
+  /* color: #9adbb3; */
+  left: 110px;
+  position: absolute;
+  translate: 0 240px;
+}
+.landing-sub-header {
+  font-size: 32pt;
+  font-family: "lato";
+  display: inline-block;
+}
+.landing-body-holder {
+  left: 110px;
+  position: absolute;
+  translate: 0 305px;
+}
+.landing-body {
+  font-size: 16pt;
+  font-family: "lato";
+  color: #9adbb3;
+}
+.bottom-link-holder {
+  justify-content: space-between;
+  width: 30%;
+  display: flex;
+  left: 110px;
+  bottom: 120px;
+  position: absolute;
+}
+.bottom-link {
+  text-decoration: underline;
+  font-family: "lato";
+  font-size: 16pt;
+  color: #fffde7;
+}
+.forgot-password {
+  position: absolute;
+  right: 330px;
+  bottom: 120px;
+}
+.bottom-link:hover {
+  cursor: pointer;
+}
+
+.landing-gradient {
+  background-image: linear-gradient(#242424, #111111);
+  width: fill;
+  height: fill;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.error-text {
+  color: red;
+  font-family: "Lato", sans-serif;
+  font-size: 8pt;
+}

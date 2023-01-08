@@ -2,17 +2,16 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import eyeicon from "../icons/eyeicon.png";
-import eyestrike from "../icons/eyestrike.png";
-import { logIn } from "../actions";
+import eyeicon from "../../icons/eyeicon.png";
+import eyestrike from "../../icons/eyestrike.png";
+import { logIn } from "../../actions";
 import { MobileView, BrowserView } from "react-device-detect";
-import Loader from "../components/Loader";
+import Loader from "../../components/Loader";
 import axios from "axios";
-
-import { ReactComponent as Mintervalclock } from "../icons/mintervalclock.svg";
-import { ReactComponent as CenterDot } from "../icons/clock-assets/CenterDot.svg";
-import { ReactComponent as ClockFrame } from "../icons/clock-assets/ClockFrame.svg";
-import { ReactComponent as ClockHand } from "../icons/clock-assets/ClockHand.svg";
+import "./styles.css";
+import { ReactComponent as CenterDot } from "../../icons/clock-assets/CenterDot.svg";
+import { ReactComponent as ClockFrame } from "../../icons/clock-assets/ClockFrame.svg";
+import { ReactComponent as ClockHand } from "../../icons/clock-assets/ClockHand.svg";
 import Cookies from "js-cookie";
 const Landing = () => {
   // const [cookies, setCookie] = useCookies();
@@ -107,12 +106,23 @@ const Landing = () => {
               <ClockFrame />
             </div>
             <div className="clock-hand-holder">
-              <div className="clock-hand">
+              <div
+                style={{
+                  animationDirection: `${isLoading ? "reverse" : "normal"}`,
+                  animationTimingFunction: `${isLoading ? "linear" : ""}`,
+                }}
+                className="clock-hand"
+              >
                 <ClockHand width="40px" />
               </div>
             </div>
             <div className="clock-hand-holder">
-              <div className="clock-hand-2">
+              <div
+                style={{
+                  animationDirection: `${isLoading ? "reverse" : "normal"}`,
+                }}
+                className="clock-hand-2"
+              >
                 <ClockHand width="40px" />
               </div>
             </div>
@@ -190,6 +200,9 @@ const Landing = () => {
             <div className="inline bottom-link">contact</div>
             <div className="inline bottom-link">privacy policy</div>
             <div className="inline bottom-link">help</div>
+          </div>
+          <div className="inline bottom-link forgot-password">
+            forgot password
           </div>
         </div>
       </BrowserView>
