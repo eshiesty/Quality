@@ -13,6 +13,7 @@ import { ReactComponent as CenterDot } from "../../icons/clock-assets/CenterDot.
 import { ReactComponent as ClockFrame } from "../../icons/clock-assets/ClockFrame.svg";
 import { ReactComponent as ClockHand } from "../../icons/clock-assets/ClockHand.svg";
 import Cookies from "js-cookie";
+import Clock from "../../components/Clock";
 const Landing = () => {
   // const [cookies, setCookie] = useCookies();
   const [errors, setErrors] = useState("");
@@ -101,35 +102,8 @@ const Landing = () => {
     <>
       <BrowserView>
         <div className="landing-gradient">
-          <div className="clock-holder">
-            <div className="clock-frame">
-              <ClockFrame />
-            </div>
-            <div className="clock-hand-holder">
-              <div
-                style={{
-                  animationDirection: `${isLoading ? "reverse" : "normal"}`,
-                  animationTimingFunction: `${isLoading ? "linear" : ""}`,
-                }}
-                className="clock-hand"
-              >
-                <ClockHand width="40px" />
-              </div>
-            </div>
-            <div className="clock-hand-holder">
-              <div
-                style={{
-                  animationDirection: `${isLoading ? "reverse" : "normal"}`,
-                }}
-                className="clock-hand-2"
-              >
-                <ClockHand width="40px" />
-              </div>
-            </div>
-            <div className="center-dot">
-              <CenterDot width="12px" />
-            </div>
-          </div>
+          <Clock isLoading={isLoading} />
+
           <div className="landing-header bold logo-color">Minterval</div>
           <div className="landing-sub-header-holder">
             <div className="landing-sub-header DarkModeFont">

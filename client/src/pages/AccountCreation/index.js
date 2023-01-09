@@ -7,6 +7,7 @@ import eyestrike from "../../icons/eyestrike.png";
 import { signUp, logIn } from "../../actions";
 import { useNavigate } from "react-router";
 import { MobileView, BrowserView } from "react-device-detect";
+import Clock from "../../components/Clock";
 import axios from "axios";
 import "./styles.css";
 const AccountCreation = () => {
@@ -80,98 +81,91 @@ const AccountCreation = () => {
   return (
     <>
       <BrowserView>
-        <h1
-          onClick={() => navigate("/")}
-          className="LogoText font-patua LogoSize centered-div"
-        >
-          Minterval
-        </h1>
-        <div className="container-sign top-margin">
-          <form onSubmit={handleSubmit}>
-            <div className="left">
-              <h1 className="font-patua"> Login info</h1>
+        <div className="landing-gradient">
+          <div className="signup-clock-placement">
+            <Clock isLoading={false} />
+          </div>
+          <div className="container-sign top-margin">
+            <form onSubmit={handleSubmit}>
+              <div className="left">
+                <h1 className="font-patua"> Login info</h1>
 
-              <input
-                className="input-createacc"
-                type="text"
-                name="email"
-                placeholder="email"
-              />
-
-              <div>
                 <input
-                  className="input-createacc vertical-spacing"
-                  type={passwordShown ? "text" : "password"}
-                  name="password"
-                  placeholder="password"
+                  className="input-createacc"
+                  type="text"
+                  name="email"
+                  placeholder="email"
                 />
+
                 <div>
                   <input
                     className="input-createacc vertical-spacing"
                     type={passwordShown ? "text" : "password"}
-                    name="confirmpassword"
-                    placeholder="confirm password"
+                    name="password"
+                    placeholder="password"
                   />
+                  <div>
+                    <input
+                      className="input-createacc vertical-spacing"
+                      type={passwordShown ? "text" : "password"}
+                      name="confirmpassword"
+                      placeholder="confirm password"
+                    />
 
-                  <img
-                    className={` ${
-                      passwordShown ? "eye-logo-open" : "eye-logo-closed"
-                    }`}
-                    src={passwordShown ? eyeicon : eyestrike}
-                    alt="eye"
-                    onClick={togglePasswordVis}
-                  />
+                    <img
+                      className={` ${
+                        passwordShown ? "eye-logo-open" : "eye-logo-closed"
+                      }`}
+                      src={passwordShown ? eyeicon : eyestrike}
+                      alt="eye"
+                      onClick={togglePasswordVis}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="right">
-              <h1 className="font-patua">Profile info</h1>
-              <div>
+              <div className="right">
+                <h1 className="font-patua">Profile info</h1>
                 <div>
-                  <input
-                    className="input-createacc"
-                    type="text"
-                    name="username"
-                    placeholder="username"
-                  />
-                </div>
-                <div className="vertical-spacing">
-                  <input
-                    className="input-createacc"
-                    type="text"
-                    name="name"
-                    placeholder="display name"
-                  />
-                </div>
-                <div className="vertical-spacing">
-                  <input
-                    className="input-createacc"
-                    type="date"
-                    name="dob"
-                    placeholder="Date of birth"
-                  />
-                </div>
-                <div>
-                  <label className="error-text">{errors ? errors : ""}</label>
-                </div>
-                <div>
-                  <input
-                    type="submit"
-                    className="button-log vertical-spacing"
-                  />
+                  <div>
+                    <input
+                      className="input-createacc"
+                      type="text"
+                      name="username"
+                      placeholder="username"
+                    />
+                  </div>
+                  <div className="vertical-spacing">
+                    <input
+                      className="input-createacc"
+                      type="text"
+                      name="name"
+                      placeholder="display name"
+                    />
+                  </div>
+                  <div className="vertical-spacing">
+                    <input
+                      className="input-createacc"
+                      type="date"
+                      name="dob"
+                      placeholder="Date of birth"
+                    />
+                  </div>
+                  <div>
+                    <label className="error-text">{errors ? errors : ""}</label>
+                  </div>
+                  <div>
+                    <input
+                      type="submit"
+                      className="button-log vertical-spacing"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </BrowserView>
       <MobileView>
-        <h1
-          onClick={() => navigate("/")}
-          className="LogoText font-patua LogoSize centered-div"
-        >
-          Minterval
-        </h1>
         <div className="mobile-container top-margin">
           <div className="centered-div">
             <form onSubmit={handleSubmit}>
